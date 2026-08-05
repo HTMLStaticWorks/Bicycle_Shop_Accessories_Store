@@ -1,0 +1,90 @@
+/* ==========================================================================
+   CycleNest - RTL Stylesheet
+   ========================================================================== */
+
+[dir="rtl"], .rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Typography & Layout alignment */
+[dir="rtl"] .section-header {
+  text-align: center;
+}
+
+[dir="rtl"] .form-group {
+  text-align: right;
+}
+
+/* Margin and Padding Reversals */
+[dir="rtl"] .btn {
+  /* No special margin needed if gap is used, but icon spacing if any */
+}
+
+/* Drawer slides from left in RTL */
+[dir="rtl"] .mobile-drawer {
+  right: auto;
+  left: -100%;
+  box-shadow: 4px 0 20px rgba(0,0,0,0.1);
+}
+[dir="rtl"] .mobile-drawer.open {
+  left: 0;
+  right: auto;
+}
+[dir="rtl"] .drawer-close {
+  right: auto;
+  left: var(--space-4);
+}
+
+/* Forms */
+[dir="rtl"] .form-control {
+  text-align: right;
+}
+
+/* Nav Menu */
+[dir="rtl"] .logo {
+  gap: 8px; /* handled by flex gap */
+}
+
+[dir="rtl"] .hero-image {
+  right: auto;
+  left: 0;
+  -webkit-mask-image: linear-gradient(270deg, transparent 0%, #000 42%, #000 100%);
+  mask-image: linear-gradient(270deg, transparent 0%, #000 42%, #000 100%);
+}
+
+@media (max-width: 768px) {
+  [dir="rtl"] .hero-image {
+    -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 70%);
+    mask-image: linear-gradient(180deg, transparent 0%, #000 70%);
+  }
+}
+
+/* Directional accents */
+[dir="rtl"] .card::before {
+  transform-origin: 100% 50%;
+}
+[dir="rtl"] .nav-link::after {
+  left: auto;
+  right: 0;
+}
+[dir="rtl"] .service-row::before {
+  left: auto;
+  right: 0;
+}
+[dir="rtl"] .drawer-nav .nav-link:hover {
+  padding-left: 14px;
+  padding-right: 20px;
+}
+[dir="rtl"] .footer-col h4::after {
+  left: auto;
+  right: 0;
+}
+[dir="rtl"] .eyebrow {
+  letter-spacing: normal;
+}
+
+/* Animations */
+[dir="rtl"] .card:hover {
+  transform: translateY(-6px);
+}

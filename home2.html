@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CycleNest - Premium Bikes & Service</title>
+  <meta name="description" content="CycleNest: Premium bicycle shop, gear, and professional servicing.">
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#e0263a">
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <style>
+    /* Home 2 Specific Styles */
+    .hero-split {
+      display: flex;
+      min-height: 100vh;
+      background: var(--secondary);
+    }
+    .hero-half {
+      flex: 1;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      color: #fff;
+      text-align: center;
+      padding: var(--space-8);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .hero-half::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(180deg, rgba(8,10,14,0.55) 0%, rgba(8,10,14,0.35) 45%, rgba(8,10,14,0.85) 100%);
+      z-index: 1;
+      transition: var(--transition);
+    }
+    .hero-half:hover::before {
+      background: linear-gradient(180deg, rgba(8,10,14,0.45) 0%, rgba(168,18,36,0.45) 60%, rgba(8,10,14,0.88) 100%);
+    }
+    .hero-half + .hero-half {
+      box-shadow: -1px 0 0 rgba(255,255,255,0.10);
+    }
+    .hero-half .btn {
+      position: relative;
+      z-index: 2;
+    }
+    .hero-half img {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      transition: transform 0.8s ease;
+    }
+    .hero-half:hover img {
+      transform: scale(1.05);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    @media (max-width: 768px) {
+      .hero-split { flex-direction: column; }
+      .hero-half { min-height: 50vh; }
+    }
+
+    /* Before / After Workshop Proof ---------------------------------------- */
+    .ba-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: var(--space-8);
+      align-items: center;
+    }
+    .ba-compare {
+      --ba-pos: 50%;
+      position: relative;
+      aspect-ratio: 4 / 3;
+      border-radius: var(--radius);
+      overflow: hidden;
+      isolation: isolate;
+      background: var(--secondary);
+      box-shadow: var(--shadow-lg);
+      touch-action: pan-y;
+    }
+    .ba-compare img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+    /* The "before" layer is clipped to the left of the handle. Both layers use
+       the same photograph so the two states line up perfectly — the grime is a
+       filter. Swap in a real pair of shots and drop the filter when available. */
+    .ba-before {
+      clip-path: inset(0 calc(100% - var(--ba-pos)) 0 0);
+      filter: saturate(0.28) contrast(1.06) brightness(0.68) sepia(0.32);
+    }
+    .ba-divider {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: var(--ba-pos);
+      width: 2px;
+      margin-left: -1px;
+      background: rgba(255,255,255,0.92);
+      box-shadow: 0 0 0 1px rgba(8,10,14,0.28), 0 0 22px rgba(8,10,14,0.45);
+      z-index: 3;
+      pointer-events: none;
+    }
+    .ba-knob {
+      position: absolute;
+      top: 50%;
+      left: var(--ba-pos);
+      transform: translate(-50%, -50%);
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: var(--primary-grad);
+      box-shadow: var(--shadow-brand), 0 0 0 4px rgba(255,255,255,0.92);
+      z-index: 3;
+      pointer-events: none;
+      transition: box-shadow var(--transition), transform 0.2s var(--ease-out);
+    }
+    .ba-knob i { font-size: 1.5rem; }
+    .ba-compare:hover .ba-knob { transform: translate(-50%, -50%) scale(1.06); }
+    .ba-range {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      opacity: 0;
+      background: transparent;
+      cursor: ew-resize;
+      z-index: 4;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    .ba-range::-webkit-slider-thumb { -webkit-appearance: none; width: 56px; height: 56px; }
+    .ba-range::-moz-range-thumb { width: 56px; height: 56px; border: 0; background: transparent; }
+    .ba-range:focus-visible ~ .ba-knob {
+      box-shadow: var(--shadow-brand), 0 0 0 4px #fff, 0 0 0 9px var(--primary-line);
+    }
+    .ba-tag {
+      position: absolute;
+      bottom: var(--space-3);
+      z-index: 3;
+      pointer-events: none;
+      transition: opacity var(--transition);
+    }
+    .ba-tag-before {
+      left: var(--space-3);
+      background: rgba(8,10,14,0.78);
+      color: #fff;
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.16);
+    }
+    .ba-tag-after {
+      right: var(--space-3);
+      background: var(--accent);
+      color: var(--secondary);
+      box-shadow: 0 10px 24px -10px rgba(207,163,73,0.6);
+    }
+    .ba-compare[data-pos="min"] .ba-tag-before,
+    .ba-compare[data-pos="max"] .ba-tag-after { opacity: 0; }
+    .ba-hint {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-1);
+      margin-top: var(--space-2);
+      color: rgba(255,255,255,0.55);
+    }
+    .ba-copy p { color: rgba(255,255,255,0.72); }
+    .ba-checks {
+      list-style: none;
+      display: grid;
+      gap: var(--space-2);
+      margin: var(--space-4) 0;
+    }
+    .ba-checks li {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      color: rgba(255,255,255,0.82);
+      padding-bottom: var(--space-2);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .ba-checks li:last-child { border-bottom: 0; padding-bottom: 0; }
+    .ba-checks i { color: var(--primary); flex-shrink: 0; font-size: 1.25rem; }
+    .ba-actions { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+    @media (max-width: 900px) {
+      .ba-layout { grid-template-columns: 1fr; gap: var(--space-6); }
+    }
+    @media (max-width: 560px) {
+      .ba-compare { aspect-ratio: 3 / 4; }
+      .ba-actions .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo"><i class="ph-fill ph-bicycle"></i> <span>Cycle<span>Nest</span></span></a>
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="home2.html" class="nav-link" style="color: var(--primary);">Home 2</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="bicycles.html" class="nav-link">Bicycles</a>
+        <a href="accessories.html" class="nav-link">Accessories</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" aria-label="Toggle Dark Mode"><i class="ph ph-moon"></i></button>
+        <button class="rtl-toggle" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+        <a href="login.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.875rem;">Login</a>
+      </div>
+      <button class="hamburger" aria-label="Open Menu"><i class="ph ph-list"></i></button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer">
+    <button class="drawer-close" aria-label="Close Menu"><i class="ph ph-x"></i></button>
+    <nav class="drawer-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="home2.html" class="nav-link" style="color: var(--primary);">Home 2</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="bicycles.html" class="nav-link">Bicycles</a>
+      <a href="accessories.html" class="nav-link">Accessories</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="blog.html" class="nav-link">Blog</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="login.html" class="btn btn-primary" style="margin-top: var(--space-2); text-align: center;">Login</a>
+    </nav>
+    <div class="drawer-controls">
+      <button class="theme-toggle" aria-label="Toggle Dark Mode"><i class="ph ph-moon"></i></button>
+      <button class="rtl-toggle" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+    </div>
+  </div>
+
+  <!-- Hero Split Section -->
+  <section class="hero-split">
+    <!-- Left: Shop -->
+    <a href="bicycles.html" class="hero-half">
+      <img src="https://images.unsplash.com/photo-1571186714247-f3fffa401a87?auto=format&fit=crop&q=80&w=1200" alt="Shop Bikes">
+      <div class="hero-content">
+        <h1 style="font-size: 4rem; color: #fff; margin-bottom: var(--space-2);">Shop Bikes & Gear</h1>
+        <p style="font-size: 1.25rem; color: rgba(255,255,255,0.9);">Explore our premium selection.</p>
+        <span class="btn btn-outline" style="margin-top: var(--space-4);">Explore Shop</span>
+      </div>
+    </a>
+    <!-- Right: Service -->
+    <a href="contact.html#booking" class="hero-half">
+      <img src="https://images.unsplash.com/photo-1579624535352-32a76f2b4fb2?auto=format&fit=crop&q=80&w=1200" alt="Service & Repair">
+      <div class="hero-content">
+        <h1 style="font-size: 4rem; color: #fff; margin-bottom: var(--space-2);">Professional Service</h1>
+        <p style="font-size: 1.25rem; color: rgba(255,255,255,0.9);">Expert mechanics at your service.</p>
+        <span class="btn btn-outline" style="margin-top: var(--space-4);">Book a Repair</span>
+      </div>
+    </a>
+  </section>
+
+  <!-- Marquee Info Strip -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <div class="marquee-item">
+        <span>★</span> Free Shipping on Gear Over $99 <span>★</span> 10% Off Your First Order <span>★</span> Professional Bike Fitting <span>★</span> 30-Day Returns <span>★</span> Expert Mechanics On-Site
+      </div>
+      <div class="marquee-item">
+        <span>★</span> Free Shipping on Gear Over $99 <span>★</span> 10% Off Your First Order <span>★</span> Professional Bike Fitting <span>★</span> 30-Day Returns <span>★</span> Expert Mechanics On-Site
+      </div>
+    </div>
+  </div>
+
+  <!-- Recent Arrivals (Bicycles) -->
+  <section class="section" style="padding-top: var(--space-12);">
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: var(--space-8); flex-wrap: wrap; gap: var(--space-4);">
+        <div>
+          <h2 style="margin-bottom: 0;">New Arrivals</h2>
+          <p style="color: var(--text-light); margin-top: var(--space-2);">The latest bikes to hit our showroom floor.</p>
+        </div>
+        <a href="bicycles.html" class="btn btn-outline">View All Bikes</a>
+      </div>
+      
+      <div class="grid">
+        <div class="card" style="padding: 0; overflow: hidden; border: none; box-shadow: var(--shadow);">
+          <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&q=80&w=600" alt="Road Bikes" style="width: 100%; height: 260px; object-fit: cover; ">
+          <div style="padding: var(--space-4); text-align: left; width: 100%;">
+            <span class="badge" style="margin-bottom: var(--space-2);">Road</span>
+            <h3 style="margin-bottom: var(--space-1);">Aero Speed R</h3>
+            <p style="color: var(--text-light); font-size: 0.875rem; margin-bottom: var(--space-4);">Carbon Frame • Ultegra Di2</p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 1.25rem; font-weight: 700;">$3,200</span>
+              <a href="#" style="color: var(--primary); font-weight: 700; font-size: 0.875rem; text-transform: uppercase;">View <i class="ph ph-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="padding: 0; overflow: hidden; border: none; box-shadow: var(--shadow);">
+          <img src="https://images.unsplash.com/photo-1576435728678-68ce06233824?auto=format&fit=crop&q=80&w=600" alt="Mountain Bikes" style="width: 100%; height: 260px; object-fit: cover; ">
+          <div style="padding: var(--space-4); text-align: left; width: 100%;">
+            <span class="badge" style="margin-bottom: var(--space-2); background: var(--secondary);">Mountain</span>
+            <h3 style="margin-bottom: var(--space-1);">Trail Shredder X</h3>
+            <p style="color: var(--text-light); font-size: 0.875rem; margin-bottom: var(--space-4);">Alloy Frame • Fox 36 Fork</p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 1.25rem; font-weight: 700;">$2,800</span>
+              <a href="#" style="color: var(--primary); font-weight: 700; font-size: 0.875rem; text-transform: uppercase;">View <i class="ph ph-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="padding: 0; overflow: hidden; border: none; box-shadow: var(--shadow);">
+          <img src="https://images.unsplash.com/photo-1528723555231-15b6727ceb78?auto=format&fit=crop&q=80&w=600" alt="Electric Bikes" style="width: 100%; height: 260px; object-fit: cover; ">
+          <div style="padding: var(--space-4); text-align: left; width: 100%;">
+            <span class="badge" style="margin-bottom: var(--space-2); background: var(--accent); color: var(--secondary);">Electric</span>
+            <h3 style="margin-bottom: var(--space-1);">City Strider E1</h3>
+            <p style="color: var(--text-light); font-size: 0.875rem; margin-bottom: var(--space-4);">500W Motor • 60mi Range</p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 1.25rem; font-weight: 700;">$1,950</span>
+              <a href="#" style="color: var(--primary); font-weight: 700; font-size: 0.875rem; text-transform: uppercase;">View <i class="ph ph-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Packages Highlight -->
+  <section class="section section-muted">
+    <div class="container">
+      <div class="section-header">
+        <h2>Service Packages</h2>
+        <p>Expert maintenance to keep your ride smooth and safe.</p>
+      </div>
+      <div class="grid">
+        <div style="background: var(--bg); padding: var(--space-6); border-radius: var(--radius); text-align: center; border: 1px solid var(--border); transition: var(--transition);">
+          <i class="ph-duotone ph-wrench" style="font-size: 3rem; color: var(--primary); margin-bottom: var(--space-3);"></i>
+          <h3 style="margin-bottom: var(--space-2);">Standard Tune-Up</h3>
+          <p style="color: var(--text-light); margin-bottom: var(--space-4);">Gear/brake adjustment, lube, and safety check.</p>
+          <div style="font-size: 2rem; font-weight: 700; color: var(--text); margin-bottom: var(--space-4); font-family: var(--font-display);">$85</div>
+          <a href="contact.html#booking" class="btn btn-outline" style="width: 100%;">Book Now</a>
+        </div>
+        <div style="background: var(--secondary); color: #fff; padding: var(--space-6); border-radius: var(--radius); text-align: center; border: 1px solid var(--primary); box-shadow: 0 10px 30px rgba(230,57,70,0.2); transform: translateY(-10px);">
+          <span class="badge" style="background: var(--accent); color: var(--secondary); margin-bottom: var(--space-2);">Most Popular</span>
+          <i class="ph-duotone ph-gear" style="font-size: 3rem; color: var(--primary); margin-bottom: var(--space-3);"></i>
+          <h3 style="color: #fff; margin-bottom: var(--space-2);">Comprehensive</h3>
+          <p style="color: rgba(255,255,255,0.68); margin-bottom: var(--space-4);">Tune-up plus drivetrain clean and wheel truing.</p>
+          <div style="font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: var(--space-4); font-family: var(--font-display);">$150</div>
+          <a href="contact.html#booking" class="btn btn-primary" style="width: 100%;">Book Now</a>
+        </div>
+        <div style="background: var(--bg); padding: var(--space-6); border-radius: var(--radius); text-align: center; border: 1px solid var(--border); transition: var(--transition);">
+          <i class="ph-duotone ph-sparkle" style="font-size: 3rem; color: var(--primary); margin-bottom: var(--space-3);"></i>
+          <h3 style="margin-bottom: var(--space-2);">Full Overhaul</h3>
+          <p style="color: var(--text-light); margin-bottom: var(--space-4);">Complete tear-down, deep clean, and regrease.</p>
+          <div style="font-size: 2rem; font-weight: 700; color: var(--text); margin-bottom: var(--space-4); font-family: var(--font-display);">$250</div>
+          <a href="contact.html#booking" class="btn btn-outline" style="width: 100%;">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Workshop Before / After -->
+  <section class="section section-dark">
+    <div class="container ba-layout">
+      <!-- Comparison: pinned to LTR so the drag direction is stable in RTL too -->
+      <figure class="ba-compare" dir="ltr">
+        <img class="ba-after" src="https://images.unsplash.com/photo-1532453288672-3a27e9be9efd?auto=format&fit=crop&q=80&w=1000" alt="Drivetrain after a full CycleNest overhaul">
+        <img class="ba-before" src="https://images.unsplash.com/photo-1532453288672-3a27e9be9efd?auto=format&fit=crop&q=80&w=1000" alt="The same drivetrain before servicing">
+        <span class="badge ba-tag ba-tag-before">Before</span>
+        <span class="badge ba-tag ba-tag-after">After</span>
+        <input type="range" class="ba-range" min="0" max="100" value="50" step="0.5" aria-label="Drag to compare the drivetrain before and after servicing">
+        <div class="ba-divider"></div>
+        <div class="ba-knob"><i class="ph-bold ph-arrows-left-right"></i></div>
+      </figure>
+
+      <div class="ba-copy">
+        <span class="eyebrow">The CycleNest Difference</span>
+        <h2>Six Hours on the Stand</h2>
+        <p>
+          A full overhaul is not a wipe-down. Every bike comes apart to the last bearing, gets degreased, regreased and rebuilt to torque spec by a mechanic who rides the same trails you do.
+        </p>
+        <ul class="ba-checks">
+          <li><i class="ph-bold ph-check-circle"></i> Drivetrain stripped, degreased and re-waxed</li>
+          <li><i class="ph-bold ph-check-circle"></i> Hubs and bottom bracket regreased</li>
+          <li><i class="ph-bold ph-check-circle"></i> Wheels trued and tensioned by hand</li>
+          <li><i class="ph-bold ph-check-circle"></i> Every bolt torqued to manufacturer spec</li>
+        </ul>
+        <div class="ba-actions">
+          <a href="contact.html#booking" class="btn btn-primary">Book an Overhaul</a>
+          <a href="services.html" class="btn btn-outline">All Services</a>
+        </div>
+        <span class="ba-hint"><i class="ph ph-hand-swipe-left"></i> Drag the slider to see the difference</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Story Highlight -->
+  <section class="section">
+    <div class="container" style="display: flex; gap: var(--space-8); align-items: center; flex-wrap: wrap;">
+      <div style="flex: 1; min-width: 300px;">
+        <h2 style="margin-bottom: var(--space-4);">Rider Owned & Operated</h2>
+        <p style="color: var(--text-light); margin-bottom: var(--space-4);">
+          Since 2012, CycleNest has been the hub for local cyclists. We don't just sell bikes—we ride them, build them, and fix them. Our passion for the sport drives our commitment to exceptional service.
+        </p>
+        <a href="about.html" class="btn btn-primary" style="margin-top: var(--space-2);">Our Story</a>
+      </div>
+      <div style="flex: 1; min-width: 300px; display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2);">
+        <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&q=80&w=400" alt="Mechanic" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius) 0 0 var(--radius);">
+        <img src="https://images.unsplash.com/photo-1558222218-b7b54eede3f3?auto=format&fit=crop&q=80&w=400" alt="Workshop" style="width: 100%; height: 200px; object-fit: cover; border-radius: 0 var(--radius) var(--radius) 0;">
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="section section-cta" style="text-align: center; color: #fff; padding: var(--space-12) 0;">
+    <div class="container">
+      <h2 style="font-size: 3rem; margin-bottom: var(--space-4); color: #fff; text-transform: uppercase;">Ready to Elevate Your Ride?</h2>
+      <p style="margin-bottom: var(--space-4); font-size: 1.125rem;">Visit CycleNest today for expert fittings, custom builds, and premium gear.</p>
+      <a href="contact.html" class="btn" style="background: #fff; color: var(--primary); font-size: 1.25rem; padding: 18px 36px;">Contact Our Experts</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" style="padding-top: var(--space-8);">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo" style="color: #fff; margin-bottom: var(--space-3);"><i class="ph-fill ph-bicycle"></i> <span>Cycle<span>Nest</span></span></a>
+          <p style="color: rgba(255,255,255,0.68);">Your premium destination for bicycles, gear, and professional servicing. Built for the ride.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="bicycles.html">Bicycles</a></li>
+            <li><a href="accessories.html">Accessories</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html#booking">Book a Repair</a></li>
+            <li><a href="login.html">Login</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Newsletter</h4>
+          <p style="color: rgba(255,255,255,0.68); margin-bottom: var(--space-2);">Subscribe for tips, gear reviews, and exclusive offers.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email" class="newsletter-input" aria-label="Email address">
+            <button type="submit" class="btn btn-primary" style="padding: 10px 16px;"><i class="ph ph-paper-plane-right"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 CycleNest. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Before / After comparison slider
+    (function () {
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      document.querySelectorAll('.ba-compare').forEach(function (box) {
+        var range = box.querySelector('.ba-range');
+        if (!range) return;
+
+        var sync = function () {
+          var v = Number(range.value);
+          box.style.setProperty('--ba-pos', v + '%');
+          box.dataset.pos = v <= 6 ? 'min' : (v >= 94 ? 'max' : 'mid');
+        };
+
+        var touched = false;
+        range.addEventListener('input', function () {
+          touched = true;
+          sync();
+        });
+        sync();
+
+        // One-time nudge on first view so the control announces itself
+        if (reduceMotion || !('IntersectionObserver' in window)) return;
+
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            observer.disconnect();
+            if (touched) return;
+
+            var from = 84, to = 50, start = null, duration = 1000;
+            range.value = from;
+            sync();
+
+            var step = function (now) {
+              if (start === null) start = now;
+              var t = Math.min((now - start) / duration, 1);
+              var eased = 1 - Math.pow(1 - t, 3);
+              range.value = from + (to - from) * eased;
+              sync();
+              if (t < 1) requestAnimationFrame(step);
+            };
+            requestAnimationFrame(step);
+          });
+        }, { threshold: 0.35 });
+
+        observer.observe(box);
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Repair & Services - CycleNest</title>
+  <meta name="description" content="Professional bicycle repair and maintenance services by CycleNest.">
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#e0263a">
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo"><i class="ph-fill ph-bicycle"></i> <span>Cycle<span>Nest</span></span></a>
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="home2.html" class="nav-link">Home 2</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="bicycles.html" class="nav-link">Bicycles</a>
+        <a href="accessories.html" class="nav-link">Accessories</a>
+        <a href="services.html" class="nav-link" style="color: var(--primary);">Services</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" aria-label="Toggle Dark Mode" title="Toggle Theme"><i class="ph ph-moon"></i></button>
+        <button class="rtl-toggle" aria-label="Toggle RTL" title="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+        <a href="login.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.875rem;">Login</a>
+      </div>
+      <button class="hamburger" aria-label="Open Menu"><i class="ph ph-list"></i></button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer">
+    <button class="drawer-close" aria-label="Close Menu"><i class="ph ph-x"></i></button>
+    <nav class="drawer-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="home2.html" class="nav-link">Home 2</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="bicycles.html" class="nav-link">Bicycles</a>
+      <a href="accessories.html" class="nav-link">Accessories</a>
+      <a href="services.html" class="nav-link" style="color: var(--primary);">Services</a>
+      <a href="blog.html" class="nav-link">Blog</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="login.html" class="btn btn-primary" style="margin-top: var(--space-2); text-align: center;">Login</a>
+    </nav>
+    <div class="drawer-controls">
+      <button class="theme-toggle" aria-label="Toggle Dark Mode"><i class="ph ph-moon"></i></button>
+      <button class="rtl-toggle" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+    </div>
+  </div>
+
+  <!-- Page Header -->
+  <section class="section page-hero" style="padding-top: calc(var(--header-height) + var(--space-10)); text-align: center; padding-bottom: var(--space-12);">
+    <div class="container">
+      <h1 style="font-size: 4rem;">Professional Servicing</h1>
+      <p style="color: var(--text-light); max-width: 600px; margin: 0 auto; font-size: 1.125rem;">
+        Keep your bike running like new. From quick tune-ups to complete overhauls, our experts have you covered.
+      </p>
+      <a href="#booking" class="btn btn-primary" style="margin-top: var(--space-4); font-size: 1.125rem;">Book a Repair</a>
+    </div>
+  </section>
+
+  <!-- Services List -->
+  <section class="section">
+    <div class="container" style="max-width: 1000px;">
+      
+      <div style="display: flex; flex-direction: column; gap: var(--space-4);">
+        
+        <!-- Service 1 -->
+        <div class="service-row">
+          <div class="icon-badge" style="width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <i class="ph-duotone ph-wrench" style="font-size: 3rem; color: var(--primary);"></i>
+          </div>
+          <div style="flex: 1; min-width: 250px;">
+            <h3 style="margin-bottom: var(--space-1);">Standard Tune-Up</h3>
+            <p style="color: var(--text-light); margin-bottom: 0;">Gear and brake adjustment, minor wheel truing, drivetrain lubrication, and safety check.</p>
+          </div>
+          <div style="text-align: right; min-width: 150px;">
+            <div style="font-size: 1.5rem; font-weight: 700; color: var(--primary); font-family: var(--font-display);">$85</div>
+            <div style="color: var(--text-light); font-size: 0.875rem;"><i class="ph ph-clock"></i> 24-48 Hours</div>
+          </div>
+          <a href="#booking" class="btn btn-outline" data-book-service="Tune-Up" style="padding: 10px 20px; font-size: 0.875rem;">Book</a>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-row">
+          <div class="icon-badge" style="width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <i class="ph-duotone ph-circle-dashed" style="font-size: 3rem; color: var(--primary);"></i>
+          </div>
+          <div style="flex: 1; min-width: 250px;">
+            <h3 style="margin-bottom: var(--space-1);">Tire & Tube Repair</h3>
+            <p style="color: var(--text-light); margin-bottom: 0;">Quick swap of a flat tube or installation of new tires. Tubeless setup also available.</p>
+          </div>
+          <div style="text-align: right; min-width: 150px;">
+            <div style="font-size: 1.5rem; font-weight: 700; color: var(--primary); font-family: var(--font-display);">$15+</div>
+            <div style="color: var(--text-light); font-size: 0.875rem;"><i class="ph ph-clock"></i> While You Wait</div>
+          </div>
+          <a href="#booking" class="btn btn-outline" data-book-service="Tire Repair" style="padding: 10px 20px; font-size: 0.875rem;">Book</a>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-row">
+          <div class="icon-badge" style="width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <i class="ph-duotone ph-gear" style="font-size: 3rem; color: var(--primary);"></i>
+          </div>
+          <div style="flex: 1; min-width: 250px;">
+            <h3 style="margin-bottom: var(--space-1);">Brake / Gear Adjustment</h3>
+            <p style="color: var(--text-light); margin-bottom: 0;">Precision alignment of derailleurs or bleeding/adjusting hydraulic and mechanical brakes.</p>
+          </div>
+          <div style="text-align: right; min-width: 150px;">
+            <div style="font-size: 1.5rem; font-weight: 700; color: var(--primary); font-family: var(--font-display);">$35</div>
+            <div style="color: var(--text-light); font-size: 0.875rem;"><i class="ph ph-clock"></i> Same Day</div>
+          </div>
+          <a href="#booking" class="btn btn-outline" data-book-service="Brake Adjustment" style="padding: 10px 20px; font-size: 0.875rem;">Book</a>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="service-row">
+          <div class="icon-badge" style="width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <i class="ph-duotone ph-sparkle" style="font-size: 3rem; color: var(--primary);"></i>
+          </div>
+          <div style="flex: 1; min-width: 250px;">
+            <h3 style="margin-bottom: var(--space-1);">Full Overhaul</h3>
+            <p style="color: var(--text-light); margin-bottom: 0;">Complete disassembly, ultrasonic cleaning, regreasing of all bearings, and professional rebuild.</p>
+          </div>
+          <div style="text-align: right; min-width: 150px;">
+            <div style="font-size: 1.5rem; font-weight: 700; color: var(--primary); font-family: var(--font-display);">$250</div>
+            <div style="color: var(--text-light); font-size: 0.875rem;"><i class="ph ph-clock"></i> 3-5 Days</div>
+          </div>
+          <a href="#booking" class="btn btn-outline" data-book-service="Full Overhaul" style="padding: 10px 20px; font-size: 0.875rem;">Book</a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Booking -->
+  <section class="section" id="booking" style="background-color: var(--bg-alt);">
+    <div class="container">
+
+      <div class="section-header">
+        <div><span class="eyebrow">Book a slot</span></div>
+        <h2>Schedule Your Service</h2>
+        <p>Tell us what your bike needs and when suits you. We'll confirm your slot within one working day.</p>
+      </div>
+
+      <div class="booking-layout">
+
+        <!-- Form -->
+        <div class="booking-panel">
+
+          <!-- Success Message (Hidden by default) -->
+          <div id="bookingSuccess" style="display: none; text-align: center; padding: var(--space-6) 0;">
+            <i class="ph-fill ph-check-circle" style="font-size: 4rem; color: #4caf50; margin-bottom: var(--space-2);"></i>
+            <h3>Request Sent Successfully!</h3>
+            <p style="color: var(--text-light);">We'll contact you shortly to confirm your appointment.</p>
+          </div>
+
+          <!-- Formspree / Netlify Forms placeholder action -->
+          <form id="bookingForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="bookingName" class="form-label">Full Name *</label>
+                <input type="text" id="bookingName" name="name" class="form-control" placeholder="John Doe">
+                <span class="form-error"></span>
+              </div>
+              <div class="form-group">
+                <label for="bookingContact" class="form-label">Phone / Email *</label>
+                <input type="text" id="bookingContact" name="contact" class="form-control" placeholder="555-0198 or john@mail.com">
+                <span class="form-error"></span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="bookingBike" class="form-label">Bike Type *</label>
+                <select id="bookingBike" name="bike_type" class="form-control">
+                  <option value="">Select a bike type...</option>
+                  <option value="Road">Road Bike</option>
+                  <option value="Mountain">Mountain Bike</option>
+                  <option value="Hybrid">Hybrid/Commuter</option>
+                  <option value="Electric">E-Bike</option>
+                  <option value="Kids">Kids Bike</option>
+                  <option value="Other">Other</option>
+                </select>
+                <span class="form-error"></span>
+              </div>
+              <div class="form-group">
+                <label for="bookingService" class="form-label">Service Needed *</label>
+                <select id="bookingService" name="service_type" class="form-control">
+                  <option value="">Select a service...</option>
+                  <option value="Tune-Up" data-price="$85" data-time="24-48 Hours">Standard Tune-Up</option>
+                  <option value="Tire Repair" data-price="$15+" data-time="While You Wait">Tire/Tube Repair</option>
+                  <option value="Brake Adjustment" data-price="$35" data-time="Same Day">Brake Adjustment</option>
+                  <option value="Gear Adjustment" data-price="$35" data-time="Same Day">Gear Adjustment</option>
+                  <option value="Full Overhaul" data-price="$250" data-time="3-5 Days">Full Overhaul</option>
+                  <option value="Other" data-price="Free quote" data-time="Assessed in store">Other/Not Sure</option>
+                </select>
+                <span class="form-error"></span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="bookingDate" class="form-label">Preferred Date *</label>
+              <input type="date" id="bookingDate" name="date" class="form-control">
+              <span class="form-error"></span>
+            </div>
+
+            <div class="form-group">
+              <span class="form-label">Preferred Time *</span>
+              <div class="choice-grid" data-group="time" role="radiogroup" aria-label="Preferred time">
+                <label class="choice">
+                  <input type="radio" name="time" value="Morning">
+                  <span><i class="ph ph-sun-horizon"></i> Morning<br>9AM - 12PM</span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="time" value="Afternoon">
+                  <span><i class="ph ph-sun"></i> Afternoon<br>12PM - 4PM</span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="time" value="Evening">
+                  <span><i class="ph ph-moon-stars"></i> Evening<br>4PM - 6PM</span>
+                </label>
+              </div>
+              <span class="form-error"></span>
+            </div>
+
+            <div class="form-group">
+              <span class="form-label">Drop-off Method *</span>
+              <div class="choice-grid" data-group="dropoff" role="radiogroup" aria-label="Drop-off method">
+                <label class="choice">
+                  <input type="radio" name="dropoff" value="In store">
+                  <span><i class="ph ph-storefront"></i> I'll drop it in</span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="dropoff" value="Collection">
+                  <span><i class="ph ph-truck"></i> Collect from me</span>
+                </label>
+              </div>
+              <span class="form-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="bookingNotes" class="form-label">Additional Notes</label>
+              <textarea id="bookingNotes" name="notes" class="form-control" rows="4" placeholder="Describe any specific issues (e.g., 'brakes are squeaking')..."></textarea>
+            </div>
+
+            <div class="booking-estimate" id="bookingEstimate">
+              <div>
+                <div class="estimate-label">Estimated cost</div>
+                <div class="estimate-value">--</div>
+              </div>
+              <div class="estimate-meta">Pick a service to see pricing</div>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.125rem;">Confirm Booking Request</button>
+            <p style="color: var(--text-light); font-size: 0.875rem; text-align: center; margin-top: var(--space-2); margin-bottom: 0;">
+              No payment now — you pay after the work is approved.
+            </p>
+          </form>
+
+        </div>
+
+        <!-- Reassurance column -->
+        <aside>
+          <div class="booking-panel" style="margin-bottom: var(--space-3);">
+            <h3 style="margin-bottom: var(--space-3);">How It Works</h3>
+            <ol class="step-list">
+              <li>
+                <div>
+                  <h4 style="margin-bottom: 4px;">Send the request</h4>
+                  <p>Pick your service, date and time slot — takes under a minute.</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <h4 style="margin-bottom: 4px;">We confirm</h4>
+                  <p>A mechanic calls or emails within one working day to lock the slot.</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <h4 style="margin-bottom: 4px;">Ride away</h4>
+                  <p>We inspect, quote anything extra, and only start once you approve.</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+
+          <div class="booking-panel">
+            <h3 style="margin-bottom: var(--space-3);">Workshop Hours</h3>
+            <ul class="hours-list" style="margin-bottom: var(--space-3);">
+              <li>Mon - Fri <span>9:00 AM - 6:00 PM</span></li>
+              <li>Saturday <span>10:00 AM - 4:00 PM</span></li>
+              <li>Sunday <span>Closed</span></li>
+            </ul>
+            <div class="contact-item" style="padding-left: 0;">
+              <i class="ph-fill ph-phone" style="font-size: 1.5rem;"></i>
+              <div>
+                <h4 style="margin-bottom: 4px;">Need it urgently?</h4>
+                <p style="color: var(--text-light); margin-bottom: 0;">Call +1 (555) 123-4567 and we'll fit you in.</p>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo" style="color: #fff; margin-bottom: var(--space-3);"><i class="ph-fill ph-bicycle"></i> <span>Cycle<span>Nest</span></span></a>
+          <p style="color: rgba(255,255,255,0.68);">Your premium destination for bicycles, gear, and professional servicing. Built for the ride.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="bicycles.html">Bicycles</a></li>
+            <li><a href="accessories.html">Accessories</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="#booking">Book a Repair</a></li>
+            <li><a href="login.html">Login</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Newsletter</h4>
+          <p style="color: rgba(255,255,255,0.68); margin-bottom: var(--space-2);">Subscribe for tips, gear reviews, and exclusive offers.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email" class="newsletter-input" aria-label="Email address">
+            <button type="submit" class="btn btn-primary" style="padding: 10px 16px;"><i class="ph ph-paper-plane-right"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 CycleNest. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/booking.js"></script>
+</body>
+</html>

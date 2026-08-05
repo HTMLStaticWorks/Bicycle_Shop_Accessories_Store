@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog & Guides - CycleNest</title>
+  <meta name="description" content="Cycling tips, maintenance guides, and gear reviews from CycleNest experts.">
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#e0263a">
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo"><i class="ph-fill ph-bicycle"></i> <span>Cycle<span>Nest</span></span></a>
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="home2.html" class="nav-link">Home 2</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="bicycles.html" class="nav-link">Bicycles</a>
+        <a href="accessories.html" class="nav-link">Accessories</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="blog.html" class="nav-link" style="color: var(--primary);">Blog</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" aria-label="Toggle Dark Mode" title="Toggle Theme"><i class="ph ph-moon"></i></button>
+        <button class="rtl-toggle" aria-label="Toggle RTL" title="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+        <a href="login.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.875rem;">Login</a>
+      </div>
+      <button class="hamburger" aria-label="Open Menu"><i class="ph ph-list"></i></button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer">
+    <button class="drawer-close" aria-label="Close Menu"><i class="ph ph-x"></i></button>
+    <nav class="drawer-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="home2.html" class="nav-link">Home 2</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="bicycles.html" class="nav-link">Bicycles</a>
+      <a href="accessories.html" class="nav-link">Accessories</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="blog.html" class="nav-link" style="color: var(--primary);">Blog</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="login.html" class="btn btn-primary" style="margin-top: var(--space-2); text-align: center;">Login</a>
+    </nav>
+    <div class="drawer-controls">
+      <button class="theme-toggle" aria-label="Toggle Dark Mode"><i class="ph ph-moon"></i></button>
+      <button class="rtl-toggle" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+    </div>
+  </div>
+
+  <!-- Page Header -->
+  <section class="section page-hero" style="padding-top: calc(var(--header-height) + var(--space-10)); text-align: center; padding-bottom: var(--space-12);">
+    <div class="container">
+      <h1 style="font-size: 4rem;">Rider's Journal</h1>
+      <p style="color: var(--text-light); max-width: 600px; margin: 0 auto; font-size: 1.125rem;">
+        Maintenance tips, gear reviews, and stories from the trail.
+      </p>
+    </div>
+  </section>
+
+  <!-- Blog Grid -->
+  <section class="section">
+    <div class="container">
+      <div style="display: flex; gap: var(--space-4); margin-bottom: var(--space-6); justify-content: center; flex-wrap: wrap;">
+        <button class="btn btn-primary" style="padding: 8px 16px;">All</button>
+        <button class="btn btn-outline" style="padding: 8px 16px;">Maintenance</button>
+        <button class="btn btn-outline" style="padding: 8px 16px;">Gear Reviews</button>
+        <button class="btn btn-outline" style="padding: 8px 16px;">Riding Tips</button>
+      </div>
+
+      <div class="grid">
+        <!-- Post 1 -->
+        <article class="card" style="padding: 0; overflow: hidden; align-items: flex-start; text-align: left;">
+          <a href="blog-single.html" style="width: 100%;">
+            <img src="https://images.unsplash.com/photo-1541595183427-0b16f3ea83c2?auto=format&fit=crop&q=80&w=600" alt="Fix a flat tire" style="width: 100%; height: 240px; object-fit: cover; ">
+          </a>
+          <div style="padding: var(--space-4); width: 100%;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2);">
+              <span class="badge">Maintenance</span>
+              <span style="color: var(--text-light); font-size: 0.875rem;">Oct 12, 2026</span>
+            </div>
+            <a href="blog-single.html">
+              <h3 style="font-size: 1.5rem; margin-bottom: var(--space-2);">How to Fix a Flat Tire in Under 5 Minutes</h3>
+            </a>
+            <p style="color: var(--text-light); margin-bottom: var(--space-4);">Don't let a flat ruin your ride. Follow our expert mechanic's quick guide to swapping a tube on the go.</p>
+            <a href="blog-single.html" style="color: var(--primary); font-weight: 700; text-transform: uppercase; font-size: 0.875rem; display: flex; align-items: center; gap: 4px;">
+              Read More <i class="ph ph-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+        
+        <!-- Post 2 -->
+        <article class="card" style="padding: 0; overflow: hidden; align-items: flex-start; text-align: left;">
+          <a href="blog-single.html" style="width: 100%;">
+            <img src="https://images.unsplash.com/photo-1532453288672-3a27e9be9efd?auto=format&fit=crop&q=80&w=600" alt="Mountain Bike Gear" style="width: 100%; height: 240px; object-fit: cover; ">
+          </a>
+          <div style="padding: var(--space-4); width: 100%;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2);">
+              <span class="badge" style="background: var(--secondary);">Gear Reviews</span>
+              <span style="color: var(--text-light); font-size: 0.875rem;">Sep 28, 2026</span>
+            </div>
+            <a href="blog-single.html">
+              <h3 style="font-size: 1.5rem; margin-bottom: var(--space-2);">Top 5 Helmets for Aggressive Trail Riding</h3>
+            </a>
+            <p style="color: var(--text-light); margin-bottom: var(--space-4);">We tested the latest full-face and enduro helmets for safety, ventilation, and style. Here are our top picks.</p>
+            <a href="blog-single.html" style="color: var(--primary); font-weight: 700; text-transform: uppercase; font-size: 0.875rem; display: flex; align-items: center; gap: 4px;">
+              Read More <i class="ph ph-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Post 3 -->
+        <article class="card" style="padding: 0; overflow: hidden; align-items: flex-start; text-align: left;">
+          <a href="blog-single.html" style="width: 100%;">
+            <img src="https://images.unsplash.com/photo-1471506480208-91b3a4cc78be?auto=format&fit=crop&q=80&w=600" alt="Winter Riding" style="width: 100%; height: 240px; object-fit: cover; ">
+          </a>
+          <div style="padding: var(--space-4); width: 100%;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2);">
+              <span class="badge" style="background: var(--accent); color: var(--secondary);">Riding Tips</span>
+              <span style="color: var(--text-light); font-size: 0.875rem;">Sep 15, 2026</span>
+            </div>
+            <a href="blog-single.html">
+              <h3 style="font-size: 1.5rem; margin-bottom: var(--space-2);">Preparing Your Bike for Winter Commutes</h3>
+            </a>
+            <p style="color: var(--text-light); margin-bottom: var(--space-4);">Rain, grit, and cold weather take a toll on components. Learn how to winter-proof your daily commuter.</p>
+            <a href="blog-single.html" style="color: var(--primary); font-weight: 700; text-transform: uppercase; font-size: 0.875rem; display: flex; align-items: center; gap: 4px;">
+              Read More <i class="ph ph-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Post 4 -->
+        <article class="card" style="padding: 0; overflow: hidden; align-items: flex-start; text-align: left;">
+          <a href="blog-single.html" style="width: 100%;">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=600" alt="Preventing Saddle Sores" style="width: 100%; height: 240px; object-fit: cover; ">
+          </a>
+          <div style="padding: var(--space-4); width: 100%;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2);">
+              <span class="badge" style="background: var(--accent); color: var(--secondary);">Riding Tips</span>
+              <span style="color: var(--text-light); font-size: 0.875rem;">Aug 30, 2026</span>
+            </div>
+            <a href="blog-single.html">
+              <h3 style="font-size: 1.5rem; margin-bottom: var(--space-2);">The Rider's Guide to Preventing Saddle Sores</h3>
+            </a>
+            <p style="color: var(--text-light); margin-bottom: var(--space-4);">Don't let saddle discomfort cut your miles short. Learn how to choose and apply chamois cream for long road or trail rides.</p>
+            <a href="blog-single.html" style="color: var(--primary); font-weight: 700; text-transform: uppercase; font-size: 0.875rem; display: flex; align-items: center; gap: 4px;">
+              Read More <i class="ph ph-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Post 5 -->
+        <article class="card" style="padding: 0; overflow: hidden; align-items: flex-start; text-align: left;">
+          <a href="blog-single.html" style="width: 100%;">
+            <img src="https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?auto=format&fit=crop&q=80&w=600" alt="Tubeless Tires" style="width: 100%; height: 240px; object-fit: cover; ">
+          </a>
+          <div style="padding: var(--space-4); width: 100%;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2);">
+              <span class="badge">Maintenance</span>
+              <span style="color: var(--text-light); font-size: 0.875rem;">Aug 18, 2026</span>
+            </div>
+            <a href="blog-single.html">
+              <h3 style="font-size: 1.5rem; margin-bottom: var(--space-2);">Is Going Tubeless Right For Your Setup?</h3>
+            </a>
+            <p style="color: var(--text-light); margin-bottom: var(--space-4);">We break down the pros, cons, and maintenance realities of ditching inner tubes for mountain, gravel, and road wheels.</p>
+            <a href="blog-single.html" style="color: var(--primary); font-weight: 700; text-transform: uppercase; font-size: 0.875rem; display: flex; align-items: center; gap: 4px;">
+              Read More <i class="ph ph-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Post 6 -->
+        <article class="card" style="padding: 0; overflow: hidden; align-items: flex-start; text-align: left;">
+          <a href="blog-single.html" style="width: 100%;">
+            <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&q=80&w=600" alt="GPS Bike Computers" style="width: 100%; height: 240px; object-fit: cover; ">
+          </a>
+          <div style="padding: var(--space-4); width: 100%;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2);">
+              <span class="badge" style="background: var(--secondary);">Gear Reviews</span>
+              <span style="color: var(--text-light); font-size: 0.875rem;">Aug 05, 2026</span>
+            </div>
+            <a href="blog-single.html">
+              <h3 style="font-size: 1.5rem; margin-bottom: var(--space-2);">Garmin vs. Wahoo: Which GPS Bike Computer Wins?</h3>
+            </a>
+            <p style="color: var(--text-light); margin-bottom: var(--space-4);">An in-depth review comparing routing, battery life, screen visibility, and ecosystem integration between the two giants.</p>
+            <a href="blog-single.html" style="color: var(--primary); font-weight: 700; text-transform: uppercase; font-size: 0.875rem; display: flex; align-items: center; gap: 4px;">
+              Read More <i class="ph ph-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+      </div>
+
+      <!-- Pagination -->
+      <div style="display: flex; justify-content: center; gap: var(--space-2); margin-top: var(--space-8);">
+        <button class="btn btn-primary" style="padding: 8px 16px;">1</button>
+        <button class="btn btn-outline" style="padding: 8px 16px;">2</button>
+        <button class="btn btn-outline" style="padding: 8px 16px;"><i class="ph ph-caret-right"></i></button>
+      </div>
+    </div>
+  <!-- FAQ Section -->
+  <section class="section section-muted" style="padding: var(--space-8) 0;">
+    <div class="container">
+      <div class="section-header">
+        <h2>Frequently Asked Questions</h2>
+        <p>Questions about our articles, contributions, or guides? We have answers.</p>
+      </div>
+      <div style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: var(--space-3);">
+        <details class="faq-card">
+          <summary>
+            <span>How often is the Rider's Journal updated?</span>
+            <i class="ph ph-caret-down"></i>
+          </summary>
+          <div class="faq-content">
+            <p style="margin-bottom: 0;">We publish new articles, maintenance guides, and product reviews twice a week. Subscribe to our newsletter to stay updated on the latest posts.</p>
+          </div>
+        </details>
+        <details class="faq-card">
+          <summary>
+            <span>Can I submit a guest post or suggest a topic?</span>
+            <i class="ph ph-caret-down"></i>
+          </summary>
+          <div class="faq-content">
+            <p style="margin-bottom: 0;">We love hearing from our community! If you have a trail story to share or a topic you'd like us to cover, drop us a line via our Contact page.</p>
+          </div>
+        </details>
+        <details class="faq-card">
+          <summary>
+            <span>Are the maintenance guides suitable for beginners?</span>
+            <i class="ph ph-caret-down"></i>
+          </summary>
+          <div class="faq-content">
+            <p style="margin-bottom: 0;">Yes! Our guides range from beginner basics (like fixing a flat tire) to advanced overhauls. We make sure to include clear, step-by-step instructions and list all required tools.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo" style="color: #fff; margin-bottom: var(--space-3);"><i class="ph-fill ph-bicycle"></i> <span>Cycle<span>Nest</span></span></a>
+          <p style="color: rgba(255,255,255,0.68);">Your premium destination for bicycles, gear, and professional servicing. Built for the ride.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="bicycles.html">Bicycles</a></li>
+            <li><a href="accessories.html">Accessories</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html#booking">Book a Repair</a></li>
+            <li><a href="login.html">Login</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Newsletter</h4>
+          <p style="color: rgba(255,255,255,0.68); margin-bottom: var(--space-2);">Subscribe for tips, gear reviews, and exclusive offers.</p>
+          <!-- Mailchimp embed code comment -->
+          <!-- <form action="YOUR_MAILCHIMP_URL" method="post" id="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate> -->
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email" class="newsletter-input" aria-label="Email address">
+            <button type="submit" class="btn btn-primary" style="padding: 10px 16px;"><i class="ph ph-paper-plane-right"></i></button>
+          </form>
+          <!-- </form> -->
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 CycleNest. All rights reserved.</p>
+        <!-- GA_TAG -->
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
