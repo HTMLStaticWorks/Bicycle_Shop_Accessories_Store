@@ -80,19 +80,30 @@
   <section class="section">
     <div class="container">
 
-      <!-- Filter Tabs -->
-      <div
+      <!-- Filter Tabs. Real links rather than buttons, so a category is a URL
+           you can share, bookmark and reach with Back. filters.js reads
+           ?category on load and marks the matching pill. -->
+      <nav aria-label="Filter bicycles by category" data-filter-bar
         style="display: flex; gap: var(--space-4); margin-bottom: var(--space-6); justify-content: center; flex-wrap: wrap;">
-        <button class="btn btn-primary" style="padding: 8px 16px;">All Bikes</button>
-        <button class="btn btn-outline" style="padding: 8px 16px;">Road</button>
-        <button class="btn btn-outline" style="padding: 8px 16px;">Mountain</button>
-        <button class="btn btn-outline" style="padding: 8px 16px;">Hybrid/Electric</button>
-        <button class="btn btn-outline" style="padding: 8px 16px;">Kids</button>
-      </div>
+        <a href="bicycles.html?category=all" data-filter="all" class="btn btn-primary" style="padding: 8px 16px;">All
+          Bikes</a>
+        <a href="bicycles.html?category=road" data-filter="road" class="btn btn-outline"
+          style="padding: 8px 16px;">Road</a>
+        <a href="bicycles.html?category=mountain" data-filter="mountain" class="btn btn-outline"
+          style="padding: 8px 16px;">Mountain</a>
+        <a href="bicycles.html?category=electric" data-filter="electric" class="btn btn-outline"
+          style="padding: 8px 16px;">Hybrid/Electric</a>
+        <a href="bicycles.html?category=kids" data-filter="kids" class="btn btn-outline"
+          style="padding: 8px 16px;">Kids</a>
+      </nav>
 
-      <div class="grid grid-3-wide">
+      <p data-filter-empty hidden style="text-align: center; color: var(--text-light);">
+        No bikes in this category yet. <a href="bicycles.html?category=all">Browse every bike</a>.
+      </p>
+
+      <div class="grid grid-3-wide" data-filter-grid>
         <!-- Bike 1 -->
-        <div class="card" style="padding: 0; overflow: hidden;">
+        <div class="card" data-category="road" style="padding: 0; overflow: hidden;">
           <div style="position: relative; width: 100%;">
             <img src="assets/images/bike-aero-speed-r.jpg" alt="Aero Speed R"
               class="bike-card-img">
@@ -110,7 +121,7 @@
         </div>
 
         <!-- Bike 2 -->
-        <div class="card" style="padding: 0; overflow: hidden;">
+        <div class="card" data-category="mountain" style="padding: 0; overflow: hidden;">
           <div style="position: relative; width: 100%;">
             <img src="assets/images/bike-trail-shredder-x.jpg" alt="Trail Shredder X"
               class="bike-card-img">
@@ -129,7 +140,7 @@
         </div>
 
         <!-- Bike 3 -->
-        <div class="card" style="padding: 0; overflow: hidden;">
+        <div class="card" data-category="electric" style="padding: 0; overflow: hidden;">
           <div style="position: relative; width: 100%;">
             <img src="assets/images/bike-city-strider-e1.jpg" alt="City Strider E1"
               class="bike-card-img">
@@ -148,7 +159,7 @@
         </div>
 
         <!-- Bike 4 -->
-        <div class="card" style="padding: 0; overflow: hidden;">
+        <div class="card" data-category="kids" style="padding: 0; overflow: hidden;">
           <div style="position: relative; width: 100%;">
             <img src="assets/images/bike-little-crusher-20.jpg" alt="Little Crusher 20"
               class="bike-card-img">
@@ -167,7 +178,7 @@
         </div>
 
         <!-- Bike 5 -->
-        <div class="card" style="padding: 0; overflow: hidden;">
+        <div class="card" data-category="road" style="padding: 0; overflow: hidden;">
           <div style="position: relative; width: 100%;">
             <img src="assets/images/bike-gravel-grind-g2.jpg" alt="Gravel Grind G2"
               class="bike-card-img">
@@ -185,7 +196,7 @@
         </div>
 
         <!-- Bike 6 -->
-        <div class="card" style="padding: 0; overflow: hidden;">
+        <div class="card" data-category="mountain" style="padding: 0; overflow: hidden;">
           <div style="position: relative; width: 100%;">
             <img src="assets/images/bike-summit-peak-s3.jpg" alt="Summit Peak S3"
               class="bike-card-img">
@@ -204,7 +215,7 @@
         </div>
 
         <!-- Bike 7 -->
-        <div class="card" style="padding: 0; overflow: hidden;">
+        <div class="card" data-category="electric" style="padding: 0; overflow: hidden;">
           <div style="position: relative; width: 100%;">
             <img src="assets/images/bike-urban-glide-e2.jpg" alt="Urban Glide E2"
               class="bike-card-img">
@@ -223,7 +234,7 @@
         </div>
 
         <!-- Bike 8 -->
-        <div class="card" style="padding: 0; overflow: hidden;">
+        <div class="card" data-category="kids" style="padding: 0; overflow: hidden;">
           <div style="position: relative; width: 100%;">
             <img src="assets/images/bike-trail-blazer-24.jpg" alt="Trail Blazer 24"
               class="bike-card-img">
@@ -242,7 +253,7 @@
         </div>
 
         <!-- Bike 9 -->
-        <div class="card" style="padding: 0; overflow: hidden;">
+        <div class="card" data-category="road" style="padding: 0; overflow: hidden;">
           <div style="position: relative; width: 100%;">
             <img src="assets/images/bike-velocity-pro-tt.jpg" alt="Velocity Pro TT"
               class="bike-card-img">
@@ -260,7 +271,7 @@
         </div>
 
         <!-- Bike 10 -->
-        <div class="card" style="padding: 0; overflow: hidden;">
+        <div class="card" data-category="kids" style="padding: 0; overflow: hidden;">
           <div style="position: relative; width: 100%;">
             <img src="assets/images/bike-pebble-rider-12.jpg" alt="Pebble Rider 12"
               class="bike-card-img">
@@ -279,7 +290,7 @@
         </div>
 
         <!-- Bike 11 -->
-        <div class="card" style="padding: 0; overflow: hidden;">
+        <div class="card" data-category="kids" style="padding: 0; overflow: hidden;">
           <div style="position: relative; width: 100%;">
             <img src="assets/images/bike-sprout-16.jpg" alt="Sprout 16"
               class="bike-card-img">
@@ -298,7 +309,7 @@
         </div>
 
         <!-- Bike 12 -->
-        <div class="card" style="padding: 0; overflow: hidden;">
+        <div class="card" data-category="kids" style="padding: 0; overflow: hidden;">
           <div style="position: relative; width: 100%;">
             <img src="assets/images/bike-cadet-trail-26.jpg" alt="Cadet Trail 26"
               class="bike-card-img">
@@ -339,6 +350,12 @@
               class="ph-fill ph-bicycle"></i> <span>Cycle<span>Nest</span></span></a>
           <p style="color: rgba(255,255,255,0.68);">Your premium destination for bicycles, gear, and professional
             servicing. Built for the ride.</p>
+          <div class="footer-social">
+            <a href="#" class="social-link" aria-label="CycleNest on Instagram"><i class="ph-fill ph-instagram-logo" aria-hidden="true"></i></a>
+            <a href="#" class="social-link" aria-label="CycleNest on Facebook"><i class="ph-fill ph-facebook-logo" aria-hidden="true"></i></a>
+            <a href="#" class="social-link" aria-label="CycleNest on X"><i class="ph-fill ph-twitter-logo" aria-hidden="true"></i></a>
+            <a href="#" class="social-link" aria-label="CycleNest on YouTube"><i class="ph-fill ph-youtube-logo" aria-hidden="true"></i></a>
+          </div>
         </div>
         <div class="footer-col">
           <h4>Explore</h4>
@@ -376,6 +393,7 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/filters.js"></script>
 </body>
 
 </html>

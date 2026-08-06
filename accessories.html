@@ -80,19 +80,30 @@
   <section class="section">
     <div class="container">
 
-      <!-- Filter -->
-      <div
+      <!-- Filter. Real links rather than buttons, so a category is a URL you
+           can share, bookmark and reach with Back. filters.js reads ?category
+           on load and marks the matching pill. -->
+      <nav aria-label="Filter gear by category" data-filter-bar
         style="display: flex; gap: var(--space-4); margin-bottom: var(--space-8); justify-content: center; flex-wrap: wrap;">
-        <button class="btn btn-primary" style="padding: 8px 16px;">All Gear</button>
-        <button class="btn btn-outline" style="padding: 8px 16px;">Safety</button>
-        <button class="btn btn-outline" style="padding: 8px 16px;">Maintenance</button>
-        <button class="btn btn-outline" style="padding: 8px 16px;">Comfort</button>
-        <button class="btn btn-outline" style="padding: 8px 16px;">Storage</button>
-      </div>
+        <a href="accessories.html?category=all" data-filter="all" class="btn btn-primary" style="padding: 8px 16px;">All
+          Gear</a>
+        <a href="accessories.html?category=safety" data-filter="safety" class="btn btn-outline"
+          style="padding: 8px 16px;">Safety</a>
+        <a href="accessories.html?category=maintenance" data-filter="maintenance" class="btn btn-outline"
+          style="padding: 8px 16px;">Maintenance</a>
+        <a href="accessories.html?category=comfort" data-filter="comfort" class="btn btn-outline"
+          style="padding: 8px 16px;">Comfort</a>
+        <a href="accessories.html?category=storage" data-filter="storage" class="btn btn-outline"
+          style="padding: 8px 16px;">Storage</a>
+      </nav>
 
-      <div class="grid grid-3-wide">
+      <p data-filter-empty hidden style="text-align: center; color: var(--text-light);">
+        No gear in this category yet. <a href="accessories.html?category=all">Browse all gear</a>.
+      </p>
+
+      <div class="grid grid-3-wide" data-filter-grid>
         <!-- Item 1 -->
-        <a href="#" class="card gear-card">
+        <a href="#" class="card gear-card" data-category="safety">
           <img src="assets/images/gear-helmets.jpg" alt="Cycling helmets" class="gear-card-img">
           <div class="gear-card-body">
             <div class="icon-badge">
@@ -105,7 +116,7 @@
         </a>
 
         <!-- Item 2 -->
-        <a href="#" class="card gear-card">
+        <a href="#" class="card gear-card" data-category="safety">
           <img src="assets/images/gear-lights.jpg" alt="Bicycle lights" class="gear-card-img">
           <div class="gear-card-body">
             <div class="icon-badge">
@@ -118,7 +129,7 @@
         </a>
 
         <!-- Item 3 -->
-        <a href="#" class="card gear-card">
+        <a href="#" class="card gear-card" data-category="safety">
           <img src="assets/images/gear-locks.jpg" alt="Bicycle locks" class="gear-card-img">
           <div class="gear-card-body">
             <div class="icon-badge">
@@ -131,7 +142,7 @@
         </a>
 
         <!-- Item 4 -->
-        <a href="#" class="card gear-card">
+        <a href="#" class="card gear-card" data-category="maintenance">
           <img src="assets/images/gear-tools-pumps.jpg" alt="Bicycle tools and pumps" class="gear-card-img">
           <div class="gear-card-body">
             <div class="icon-badge">
@@ -144,7 +155,7 @@
         </a>
 
         <!-- Item 5 -->
-        <a href="#" class="card gear-card">
+        <a href="#" class="card gear-card" data-category="storage">
           <img src="assets/images/gear-bags-panniers.jpg" alt="Bike bags and panniers" class="gear-card-img">
           <div class="gear-card-body">
             <div class="icon-badge">
@@ -158,7 +169,7 @@
 
 
         <!-- Item 7 -->
-        <a href="#" class="card gear-card">
+        <a href="#" class="card gear-card" data-category="maintenance">
           <img src="assets/images/gear-tires-tubes.jpg" alt="Bicycle tires and tubes" class="gear-card-img">
           <div class="gear-card-body">
             <div class="icon-badge">
@@ -229,6 +240,12 @@
               class="ph-fill ph-bicycle"></i> <span>Cycle<span>Nest</span></span></a>
           <p style="color: rgba(255,255,255,0.68);">Your premium destination for bicycles, gear, and professional
             servicing. Built for the ride.</p>
+          <div class="footer-social">
+            <a href="#" class="social-link" aria-label="CycleNest on Instagram"><i class="ph-fill ph-instagram-logo" aria-hidden="true"></i></a>
+            <a href="#" class="social-link" aria-label="CycleNest on Facebook"><i class="ph-fill ph-facebook-logo" aria-hidden="true"></i></a>
+            <a href="#" class="social-link" aria-label="CycleNest on X"><i class="ph-fill ph-twitter-logo" aria-hidden="true"></i></a>
+            <a href="#" class="social-link" aria-label="CycleNest on YouTube"><i class="ph-fill ph-youtube-logo" aria-hidden="true"></i></a>
+          </div>
         </div>
         <div class="footer-col">
           <h4>Explore</h4>
@@ -266,6 +283,7 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/filters.js"></script>
 </body>
 
 </html>

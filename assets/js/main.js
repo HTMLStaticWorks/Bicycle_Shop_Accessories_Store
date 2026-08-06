@@ -5,12 +5,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Scroll progress indicator
-  const progress = document.createElement('div');
-  progress.className = 'scroll-progress';
-  document.body.appendChild(progress);
-
-  // Sticky Navbar + progress (single rAF-throttled scroll handler)
+  // Sticky Navbar (single rAF-throttled scroll handler)
   const header = document.querySelector('.header');
   const hero = document.querySelector('.hero');
   const heroImage = document.querySelector('.hero-image');
@@ -27,9 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (header) {
       header.classList.toggle('scrolled', y > 24);
     }
-
-    const max = document.documentElement.scrollHeight - window.innerHeight;
-    progress.style.transform = `scaleX(${max > 0 ? Math.min(y / max, 1) : 0})`;
 
     // Gentle parallax drift on the hero photograph
     if (heroImage && hero && !reduceMotion && y < window.innerHeight) {

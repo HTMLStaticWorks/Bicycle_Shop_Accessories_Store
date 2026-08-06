@@ -81,6 +81,25 @@
     .hero-content {
       position: relative;
       z-index: 2;
+      max-width: 100%;
+    }
+
+    .hero-content h1 {
+      font-size: 4rem;
+      color: #fff;
+      margin-bottom: var(--space-2);
+      /* "PROFESSIONAL" is wider than a phone panel; let it break rather than
+         run off the edge if the viewport gets narrower than we planned for. */
+      overflow-wrap: break-word;
+    }
+
+    .hero-content p {
+      font-size: 1.25rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .hero-content .btn {
+      margin-top: var(--space-4);
     }
 
     @media (max-width: 768px) {
@@ -90,15 +109,39 @@
 
       .hero-half {
         min-height: 50vh;
+        /* space-8 on both sides leaves ~260px of usable width on a phone */
+        padding: var(--space-8) var(--space-5);
+      }
+
+      /* Fall back to the stylesheet's sanctioned mobile h1 size — the 4rem
+         above is a desktop-only override. */
+      .hero-content h1 {
+        font-size: 2.5rem;
       }
     }
 
     /* Before / After Workshop Proof ---------------------------------------- */
+    /* minmax(0, …) rather than a bare fr: the columns hold content that sizes
+       itself to max-content, which would otherwise push the track — and the
+       page — wider than the viewport on small screens. */
     .ba-layout {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
       gap: var(--space-8);
       align-items: center;
+    }
+
+    /* Image column: comparison first, drag hint sitting under it. */
+    .ba-media {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-3);
+    }
+
+    .ba-media .ba-compare {
+      width: 100%;
+      margin: 0;
     }
 
     .ba-compare {
@@ -230,8 +273,11 @@
     .ba-hint {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
       gap: var(--space-1);
-      margin-top: var(--space-2);
+      max-width: 100%;
+      text-align: center;
       color: rgba(255, 255, 255, 0.55);
     }
 
@@ -287,7 +333,7 @@
 
     @media (max-width: 900px) {
       .ba-layout {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         gap: var(--space-6);
       }
     }
@@ -299,6 +345,20 @@
 
       .ba-actions {
         grid-template-columns: minmax(0, 1fr);
+      }
+
+      /* Below this width the longest label no longer fits on one line, so the
+         list stops sizing to its content and lets the rows wrap instead. */
+      .ba-checks {
+        width: 100%;
+      }
+
+      .ba-checks li {
+        align-items: flex-start;
+      }
+
+      .ba-checks i {
+        margin-top: 2px;
       }
     }
 
@@ -432,18 +492,18 @@
     <a href="bicycles.html" class="hero-half">
       <img src="assets/images/hero-shop-bikes.jpg" alt="Shop Bikes">
       <div class="hero-content">
-        <h1 style="font-size: 4rem; color: #fff; margin-bottom: var(--space-2);">Shop Bikes & Gear</h1>
-        <p style="font-size: 1.25rem; color: rgba(255,255,255,0.9);">Explore our premium selection.</p>
-        <span class="btn btn-outline" style="margin-top: var(--space-4);">Explore Shop</span>
+        <h1>Shop Bikes &amp; Gear</h1>
+        <p>Explore our premium selection.</p>
+        <span class="btn btn-outline">Explore Shop</span>
       </div>
     </a>
     <!-- Right: Service -->
     <a href="contact.html#booking" class="hero-half">
       <img src="assets/images/hero-service-repair.jpg" alt="Service & Repair">
       <div class="hero-content">
-        <h1 style="font-size: 4rem; color: #fff; margin-bottom: var(--space-2);">Professional Service</h1>
-        <p style="font-size: 1.25rem; color: rgba(255,255,255,0.9);">Expert mechanics at your service.</p>
-        <span class="btn btn-outline" style="margin-top: var(--space-4);">Book a Repair</span>
+        <h1>Expert Service</h1>
+        <p>Expert mechanics at your service.</p>
+        <span class="btn btn-outline">Book a Repair</span>
       </div>
     </a>
   </section>
@@ -568,17 +628,21 @@
   <!-- Workshop Before / After -->
   <section class="section section-dark">
     <div class="container ba-layout">
-      <!-- Comparison: pinned to LTR so the drag direction is stable in RTL too -->
-      <figure class="ba-compare" dir="ltr">
-        <img class="ba-after" src="assets/images/drivetrain-after.jpg" alt="Drivetrain after a full CycleNest overhaul">
-        <img class="ba-before" src="assets/images/drivetrain-before.jpg" alt="The same drivetrain before servicing">
-        <span class="badge ba-tag ba-tag-before">Before</span>
-        <span class="badge ba-tag ba-tag-after">After</span>
-        <input type="range" class="ba-range" min="0" max="100" value="50" step="0.5"
-          aria-label="Drag to compare the drivetrain before and after servicing">
-        <div class="ba-divider"></div>
-        <div class="ba-knob"><i class="ph-bold ph-arrows-left-right"></i></div>
-      </figure>
+      <div class="ba-media">
+        <!-- Comparison: pinned to LTR so the drag direction is stable in RTL too -->
+        <figure class="ba-compare" dir="ltr">
+          <img class="ba-after" src="assets/images/drivetrain-after.jpg"
+            alt="Drivetrain after a full CycleNest overhaul">
+          <img class="ba-before" src="assets/images/drivetrain-before.jpg" alt="The same drivetrain before servicing">
+          <span class="badge ba-tag ba-tag-before">Before</span>
+          <span class="badge ba-tag ba-tag-after">After</span>
+          <input type="range" class="ba-range" min="0" max="100" value="50" step="0.5"
+            aria-label="Drag to compare the drivetrain before and after servicing">
+          <div class="ba-divider"></div>
+          <div class="ba-knob"><i class="ph-bold ph-arrows-left-right"></i></div>
+        </figure>
+        <span class="ba-hint"><i class="ph ph-hand-swipe-left"></i> Drag the slider to see the difference</span>
+      </div>
 
       <div class="ba-copy">
         <span class="eyebrow">The CycleNest Difference</span>
@@ -597,7 +661,6 @@
           <a href="contact.html#booking" class="btn btn-primary">Book an Overhaul</a>
           <a href="services.html" class="btn btn-outline">All Services</a>
         </div>
-        <span class="ba-hint"><i class="ph ph-hand-swipe-left"></i> Drag the slider to see the difference</span>
       </div>
     </div>
   </section>
@@ -646,6 +709,16 @@
               class="ph-fill ph-bicycle"></i> <span>Cycle<span>Nest</span></span></a>
           <p style="color: rgba(255,255,255,0.68);">Your premium destination for bicycles, gear, and professional
             servicing. Built for the ride.</p>
+          <div class="footer-social">
+            <a href="#" class="social-link" aria-label="CycleNest on Instagram"><i class="ph-fill ph-instagram-logo"
+                aria-hidden="true"></i></a>
+            <a href="#" class="social-link" aria-label="CycleNest on Facebook"><i class="ph-fill ph-facebook-logo"
+                aria-hidden="true"></i></a>
+            <a href="#" class="social-link" aria-label="CycleNest on X"><i class="ph-fill ph-twitter-logo"
+                aria-hidden="true"></i></a>
+            <a href="#" class="social-link" aria-label="CycleNest on YouTube"><i class="ph-fill ph-youtube-logo"
+                aria-hidden="true"></i></a>
+          </div>
         </div>
         <div class="footer-col">
           <h4>Explore</h4>

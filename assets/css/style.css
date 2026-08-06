@@ -209,23 +209,6 @@ input[type="radio"] {
 }
 
 /* Thin brand progress bar (driven by main.js) */
-.scroll-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 2px;
-  width: 100%;
-  transform: scaleX(0);
-  transform-origin: 0 50%;
-  background: linear-gradient(90deg, var(--primary), var(--accent));
-  z-index: 1200;
-  pointer-events: none;
-}
-
-[dir="rtl"] .scroll-progress {
-  transform-origin: 100% 50%;
-}
-
 /* ==========================================================================
    Typography  (sizes & weights preserved exactly)
    ========================================================================== */
@@ -286,6 +269,13 @@ h2 {
 /* ==========================================================================
    Global Utilities & Elements
    ========================================================================== */
+/* The browser's own [hidden] rule is a plain `display: none`, so any component
+   that sets its own display (.card is flex) would still show through. Filtered
+   cards rely on this. */
+[hidden] {
+  display: none !important;
+}
+
 .container {
   width: 100%;
   max-width: 1440px;
@@ -1620,6 +1610,70 @@ h2 {
   object-fit: cover;
 }
 
+/* Category card call to action. The whole card is the link, so the cue reacts
+   to hovering anywhere on it: the rule draws itself in and the arrow steps
+   forward. Type size and weight match what it replaced inline. */
+.explore-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  transition: color var(--transition);
+}
+
+.explore-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: transform 0.4s var(--ease-out);
+}
+
+.explore-link i {
+  transition: transform var(--transition);
+}
+
+.card:hover .explore-link {
+  color: var(--primary-hover);
+}
+
+.card:hover .explore-link::after {
+  transform: scaleX(1);
+}
+
+.card:hover .explore-link i {
+  transform: translateX(4px);
+}
+
+[dir="rtl"] .explore-link::after {
+  transform-origin: 100% 50%;
+}
+
+[dir="rtl"] .card:hover .explore-link i {
+  transform: translateX(-4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .explore-link::after,
+  .explore-link i {
+    transition: none;
+  }
+
+  .card:hover .explore-link i {
+    transform: none;
+  }
+}
+
 /* Post card body. A plain block here would leave `.card p { flex-grow: 1 }`
    inert, so the Read More link sat directly under whatever length the excerpt
    happened to be. As a growing flex column the excerpt takes up the slack and
@@ -2064,6 +2118,38 @@ h2 {
 
 .footer-col p {
   color: rgba(255, 255, 255, 0.6);
+}
+
+/* Social row in the footer brand column. .social-link is drawn for light
+   surfaces, so on the dark band it gets its own fill and hairline. The
+   selectors carry an extra class because `.footer-col a` outranks a lone
+   `.social-link` and would otherwise re-impose inline-block and the sideways
+   hover shift. */
+.footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+.footer-social .social-link {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.82);
+  box-shadow: none;
+}
+
+.footer-social .social-link:hover {
+  background: var(--primary-grad);
+  border-color: transparent;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-brand);
+}
+
+[dir="rtl"] .footer-social .social-link:hover {
+  transform: translateY(-3px);
 }
 
 .footer-bottom {
