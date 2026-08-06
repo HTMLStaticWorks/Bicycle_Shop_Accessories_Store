@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Repair & Services - CycleNest</title>
   <meta name="description" content="Professional bicycle repair and maintenance services by CycleNest.">
   <!-- Favicon -->
-  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="assets/images/favicon.ico" sizes="32x32">
   <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
-  <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#e0263a">
   <!-- Phosphor Icons -->
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/rtl.css">
 </head>
+
 <body>
 
   <!-- Header -->
@@ -34,8 +35,10 @@
         <a href="contact.html" class="nav-link">Contact</a>
       </nav>
       <div class="nav-actions">
-        <button class="theme-toggle" aria-label="Toggle Dark Mode" title="Toggle Theme"><i class="ph ph-moon"></i></button>
-        <button class="rtl-toggle" aria-label="Toggle RTL" title="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+        <button class="theme-toggle" aria-label="Toggle Dark Mode" title="Toggle Theme"><i
+            class="ph ph-moon"></i></button>
+        <button class="rtl-toggle" aria-label="Toggle RTL" title="Toggle RTL"><i
+            class="ph ph-arrows-left-right"></i></button>
         <a href="login.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.875rem;">Login</a>
       </div>
       <button class="hamburger" aria-label="Open Menu"><i class="ph ph-list"></i></button>
@@ -63,84 +66,101 @@
   </div>
 
   <!-- Page Header -->
-  <section class="section page-hero" style="padding-top: calc(var(--header-height) + var(--space-10)); text-align: center; padding-bottom: var(--space-12);">
+  <section class="section page-hero"
+    style="padding-top: calc(var(--header-height) + var(--space-10)); text-align: center; padding-bottom: var(--space-12);">
     <div class="container">
-      <h1 style="font-size: 4rem;">Professional Servicing</h1>
+      <h1 style="font-size: 4rem;"> Servicing</h1>
       <p style="color: var(--text-light); max-width: 600px; margin: 0 auto; font-size: 1.125rem;">
         Keep your bike running like new. From quick tune-ups to complete overhauls, our experts have you covered.
       </p>
-      <a href="#booking" class="btn btn-primary" style="margin-top: var(--space-4); font-size: 1.125rem;">Book a Repair</a>
+
     </div>
   </section>
 
   <!-- Services List -->
   <section class="section">
     <div class="container" style="max-width: 1000px;">
-      
+
       <div style="display: flex; flex-direction: column; gap: var(--space-4);">
-        
+
         <!-- Service 1 -->
         <div class="service-row">
-          <div class="icon-badge" style="width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+          <div class="icon-badge"
+            style="width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
             <i class="ph-duotone ph-wrench" style="font-size: 3rem; color: var(--primary);"></i>
           </div>
-          <div style="flex: 1; min-width: 250px;">
+          <div class="service-row-copy">
             <h3 style="margin-bottom: var(--space-1);">Standard Tune-Up</h3>
-            <p style="color: var(--text-light); margin-bottom: 0;">Gear and brake adjustment, minor wheel truing, drivetrain lubrication, and safety check.</p>
+            <p style="color: var(--text-light); margin-bottom: 0;">Gear and brake adjustment, minor wheel truing,
+              drivetrain lubrication, and safety check.</p>
           </div>
-          <div style="text-align: right; min-width: 150px;">
-            <div style="font-size: 1.5rem; font-weight: 700; color: var(--primary); font-family: var(--font-display);">$85</div>
+          <div class="service-row-meta">
+            <div style="font-size: 1.5rem; font-weight: 700; color: var(--primary); font-family: var(--font-display);">
+              $85</div>
             <div style="color: var(--text-light); font-size: 0.875rem;"><i class="ph ph-clock"></i> 24-48 Hours</div>
           </div>
-          <a href="#booking" class="btn btn-outline" data-book-service="Tune-Up" style="padding: 10px 20px; font-size: 0.875rem;">Book</a>
+          <a href="#booking" class="btn btn-outline" data-book-service="Tune-Up"
+            style="padding: 10px 20px; font-size: 0.875rem;">Book</a>
         </div>
 
         <!-- Service 2 -->
         <div class="service-row">
-          <div class="icon-badge" style="width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+          <div class="icon-badge"
+            style="width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
             <i class="ph-duotone ph-circle-dashed" style="font-size: 3rem; color: var(--primary);"></i>
           </div>
-          <div style="flex: 1; min-width: 250px;">
+          <div class="service-row-copy">
             <h3 style="margin-bottom: var(--space-1);">Tire & Tube Repair</h3>
-            <p style="color: var(--text-light); margin-bottom: 0;">Quick swap of a flat tube or installation of new tires. Tubeless setup also available.</p>
+            <p style="color: var(--text-light); margin-bottom: 0;">Quick swap of a flat tube or installation of new
+              tires. Tubeless setup also available.</p>
           </div>
-          <div style="text-align: right; min-width: 150px;">
-            <div style="font-size: 1.5rem; font-weight: 700; color: var(--primary); font-family: var(--font-display);">$15+</div>
+          <div class="service-row-meta">
+            <div style="font-size: 1.5rem; font-weight: 700; color: var(--primary); font-family: var(--font-display);">
+              $15+</div>
             <div style="color: var(--text-light); font-size: 0.875rem;"><i class="ph ph-clock"></i> While You Wait</div>
           </div>
-          <a href="#booking" class="btn btn-outline" data-book-service="Tire Repair" style="padding: 10px 20px; font-size: 0.875rem;">Book</a>
+          <a href="#booking" class="btn btn-outline" data-book-service="Tire Repair"
+            style="padding: 10px 20px; font-size: 0.875rem;">Book</a>
         </div>
 
         <!-- Service 3 -->
         <div class="service-row">
-          <div class="icon-badge" style="width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+          <div class="icon-badge"
+            style="width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
             <i class="ph-duotone ph-gear" style="font-size: 3rem; color: var(--primary);"></i>
           </div>
-          <div style="flex: 1; min-width: 250px;">
+          <div class="service-row-copy">
             <h3 style="margin-bottom: var(--space-1);">Brake / Gear Adjustment</h3>
-            <p style="color: var(--text-light); margin-bottom: 0;">Precision alignment of derailleurs or bleeding/adjusting hydraulic and mechanical brakes.</p>
+            <p style="color: var(--text-light); margin-bottom: 0;">Precision alignment of derailleurs or
+              bleeding/adjusting hydraulic and mechanical brakes.</p>
           </div>
-          <div style="text-align: right; min-width: 150px;">
-            <div style="font-size: 1.5rem; font-weight: 700; color: var(--primary); font-family: var(--font-display);">$35</div>
+          <div class="service-row-meta">
+            <div style="font-size: 1.5rem; font-weight: 700; color: var(--primary); font-family: var(--font-display);">
+              $35</div>
             <div style="color: var(--text-light); font-size: 0.875rem;"><i class="ph ph-clock"></i> Same Day</div>
           </div>
-          <a href="#booking" class="btn btn-outline" data-book-service="Brake Adjustment" style="padding: 10px 20px; font-size: 0.875rem;">Book</a>
+          <a href="#booking" class="btn btn-outline" data-book-service="Brake Adjustment"
+            style="padding: 10px 20px; font-size: 0.875rem;">Book</a>
         </div>
 
         <!-- Service 4 -->
         <div class="service-row">
-          <div class="icon-badge" style="width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+          <div class="icon-badge"
+            style="width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
             <i class="ph-duotone ph-sparkle" style="font-size: 3rem; color: var(--primary);"></i>
           </div>
-          <div style="flex: 1; min-width: 250px;">
+          <div class="service-row-copy">
             <h3 style="margin-bottom: var(--space-1);">Full Overhaul</h3>
-            <p style="color: var(--text-light); margin-bottom: 0;">Complete disassembly, ultrasonic cleaning, regreasing of all bearings, and professional rebuild.</p>
+            <p style="color: var(--text-light); margin-bottom: 0;">Complete disassembly, ultrasonic cleaning, regreasing
+              of all bearings, and professional rebuild.</p>
           </div>
-          <div style="text-align: right; min-width: 150px;">
-            <div style="font-size: 1.5rem; font-weight: 700; color: var(--primary); font-family: var(--font-display);">$250</div>
+          <div class="service-row-meta">
+            <div style="font-size: 1.5rem; font-weight: 700; color: var(--primary); font-family: var(--font-display);">
+              $250</div>
             <div style="color: var(--text-light); font-size: 0.875rem;"><i class="ph ph-clock"></i> 3-5 Days</div>
           </div>
-          <a href="#booking" class="btn btn-outline" data-book-service="Full Overhaul" style="padding: 10px 20px; font-size: 0.875rem;">Book</a>
+          <a href="#booking" class="btn btn-outline" data-book-service="Full Overhaul"
+            style="padding: 10px 20px; font-size: 0.875rem;">Book</a>
         </div>
 
       </div>
@@ -165,7 +185,8 @@
 
           <!-- Success Message (Hidden by default) -->
           <div id="bookingSuccess" style="display: none; text-align: center; padding: var(--space-6) 0;">
-            <i class="ph-fill ph-check-circle" style="font-size: 4rem; color: #4caf50; margin-bottom: var(--space-2);"></i>
+            <i class="ph-fill ph-check-circle"
+              style="font-size: 4rem; color: #4caf50; margin-bottom: var(--space-2);"></i>
             <h3>Request Sent Successfully!</h3>
             <p style="color: var(--text-light);">We'll contact you shortly to confirm your appointment.</p>
           </div>
@@ -181,7 +202,8 @@
               </div>
               <div class="form-group">
                 <label for="bookingContact" class="form-label">Phone / Email *</label>
-                <input type="text" id="bookingContact" name="contact" class="form-control" placeholder="555-0198 or john@mail.com">
+                <input type="text" id="bookingContact" name="contact" class="form-control"
+                  placeholder="555-0198 or john@mail.com">
                 <span class="form-error"></span>
               </div>
             </div>
@@ -257,7 +279,8 @@
 
             <div class="form-group">
               <label for="bookingNotes" class="form-label">Additional Notes</label>
-              <textarea id="bookingNotes" name="notes" class="form-control" rows="4" placeholder="Describe any specific issues (e.g., 'brakes are squeaking')..."></textarea>
+              <textarea id="bookingNotes" name="notes" class="form-control" rows="4"
+                placeholder="Describe any specific issues (e.g., 'brakes are squeaking')..."></textarea>
             </div>
 
             <div class="booking-estimate" id="bookingEstimate">
@@ -268,8 +291,10 @@
               <div class="estimate-meta">Pick a service to see pricing</div>
             </div>
 
-            <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.125rem;">Confirm Booking Request</button>
-            <p style="color: var(--text-light); font-size: 0.875rem; text-align: center; margin-top: var(--space-2); margin-bottom: 0;">
+            <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.125rem;">Confirm Booking
+            </button>
+            <p
+              style="color: var(--text-light); font-size: 0.875rem; text-align: center; margin-top: var(--space-2); margin-bottom: 0;">
               No payment now — you pay after the work is approved.
             </p>
           </form>
@@ -328,8 +353,10 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <a href="index.html" class="logo" style="color: #fff; margin-bottom: var(--space-3);"><i class="ph-fill ph-bicycle"></i> <span>Cycle<span>Nest</span></span></a>
-          <p style="color: rgba(255,255,255,0.68);">Your premium destination for bicycles, gear, and professional servicing. Built for the ride.</p>
+          <a href="index.html" class="logo" style="color: #fff; margin-bottom: var(--space-3);"><i
+              class="ph-fill ph-bicycle"></i> <span>Cycle<span>Nest</span></span></a>
+          <p style="color: rgba(255,255,255,0.68);">Your premium destination for bicycles, gear, and professional
+            servicing. Built for the ride.</p>
         </div>
         <div class="footer-col">
           <h4>Explore</h4>
@@ -351,10 +378,12 @@
         </div>
         <div class="footer-col">
           <h4>Newsletter</h4>
-          <p style="color: rgba(255,255,255,0.68); margin-bottom: var(--space-2);">Subscribe for tips, gear reviews, and exclusive offers.</p>
+          <p style="color: rgba(255,255,255,0.68); margin-bottom: var(--space-2);">Subscribe for tips, gear reviews, and
+            exclusive offers.</p>
           <form class="newsletter-form">
             <input type="email" placeholder="Your email" class="newsletter-input" aria-label="Email address">
-            <button type="submit" class="btn btn-primary" style="padding: 10px 16px;"><i class="ph ph-paper-plane-right"></i></button>
+            <button type="submit" class="btn btn-primary" style="padding: 10px 16px;"><i
+                class="ph ph-paper-plane-right"></i></button>
           </form>
         </div>
       </div>
@@ -367,4 +396,5 @@
   <script src="assets/js/main.js"></script>
   <script src="assets/js/booking.js"></script>
 </body>
+
 </html>

@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CycleNest - Bicycle Shop & Accessories</title>
   <meta name="description" content="CycleNest: Premium bicycle shop, gear, and professional servicing.">
   <!-- Favicon -->
-  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="assets/images/favicon.ico" sizes="32x32">
   <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
-  <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#e0263a">
   <!-- Phosphor Icons -->
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/rtl.css">
 </head>
+
 <body>
 
   <!-- Header -->
@@ -34,8 +35,10 @@
         <a href="contact.html" class="nav-link">Contact</a>
       </nav>
       <div class="nav-actions">
-        <button class="theme-toggle" aria-label="Toggle Dark Mode" title="Toggle Theme"><i class="ph ph-moon"></i></button>
-        <button class="rtl-toggle" aria-label="Toggle RTL" title="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+        <button class="theme-toggle" aria-label="Toggle Dark Mode" title="Toggle Theme"><i
+            class="ph ph-moon"></i></button>
+        <button class="rtl-toggle" aria-label="Toggle RTL" title="Toggle RTL"><i
+            class="ph ph-arrows-left-right"></i></button>
         <a href="login.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.875rem;">Login</a>
       </div>
       <button class="hamburger" aria-label="Open Menu"><i class="ph ph-list"></i></button>
@@ -64,29 +67,36 @@
 
   <!-- Hero Section -->
   <section class="hero">
+    <img class="hero-image"
+      src="https://images.unsplash.com/photo-1471506480208-91b3a4cc78be?auto=format&fit=crop&q=80&w=1920"
+      alt="Cyclist riding an open road at speed">
+    <div class="hero-scrim"></div>
     <div class="speed-lines"></div>
     <div class="container" style="position: relative; z-index: 2;">
       <div class="hero-content">
         <span class="badge" style="margin-bottom: var(--space-3);">Push Your Limits</span>
-        <h1 style="font-size: 4.5rem; line-height: 1.1; margin-bottom: var(--space-4);">Own The<br><span style="color: var(--primary);">Road</span></h1>
-        <p style="max-width: 450px;">Precision-engineered bicycles, professional-grade servicing, and premium gear to fuel your next adventure.</p>
-        <div style="display: flex; gap: var(--space-3); flex-wrap: wrap;">
+        <h1 style="font-size: 4.5rem; line-height: 1.1; margin-bottom: var(--space-4);">Own The<br><span
+            style="color: var(--primary);">Road</span></h1>
+        <p>Precision-engineered bicycles, professional-grade servicing, and premium gear to fuel your next adventure.
+        </p>
+        <div class="hero-actions">
           <a href="bicycles.html" class="btn btn-primary">Shop Bikes</a>
           <a href="contact.html#booking" class="btn btn-outline">Book a Service</a>
         </div>
       </div>
     </div>
-    <!-- Note: A cutout image of a cyclist/bike with transparent background works best here -->
   </section>
 
   <!-- Marquee Info Strip -->
   <div class="marquee-strip">
     <div class="marquee-track">
       <div class="marquee-item">
-        <span>★</span> Free Shipping on Gear Over $99 <span>★</span> 10% Off Your First Order <span>★</span> Professional Bike Fitting <span>★</span> 30-Day Returns <span>★</span> Expert Mechanics On-Site
+        <span>★</span> Free Shipping on Gear Over $99 <span>★</span> 10% Off Your First Order <span>★</span>
+        Professional Bike Fitting <span>★</span> 30-Day Returns <span>★</span> Expert Mechanics On-Site
       </div>
       <div class="marquee-item">
-        <span>★</span> Free Shipping on Gear Over $99 <span>★</span> 10% Off Your First Order <span>★</span> Professional Bike Fitting <span>★</span> 30-Day Returns <span>★</span> Expert Mechanics On-Site
+        <span>★</span> Free Shipping on Gear Over $99 <span>★</span> 10% Off Your First Order <span>★</span>
+        Professional Bike Fitting <span>★</span> 30-Day Returns <span>★</span> Expert Mechanics On-Site
       </div>
     </div>
   </div>
@@ -96,31 +106,40 @@
     <div class="container">
       <div class="section-header">
         <h2>Find Your Ride</h2>
-        <p>From aggressive trail shredders to aerodynamic road machines, we have the perfect bike for every discipline.</p>
+        <p>From aggressive trail shredders to aerodynamic road machines, we have the perfect bike for every discipline.
+        </p>
       </div>
-      <div class="grid">
+      <div class="grid grid-3-center">
         <a href="bicycles.html" class="card" style="padding: 0; overflow: hidden; text-decoration: none;">
-          <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&q=80&w=600" alt="Road Bikes" class="card-img" style="margin-bottom: 0;">
+          <img src="assets/images/category-road.jpg" alt="Road Bikes" class="card-img" style="margin-bottom: 0;">
           <div style="padding: var(--space-4); width: 100%;">
             <h3>Road</h3>
             <p>Aerodynamic, lightweight, and built for speed on the pavement.</p>
-            <span style="color: var(--primary); font-weight: 700; text-transform: uppercase; font-size: 0.875rem;">Explore <i class="ph ph-arrow-right"></i></span>
+            <span
+              style="color: var(--primary); font-weight: 700; text-transform: uppercase; font-size: 0.875rem;">Explore
+              <i class="ph ph-arrow-right"></i></span>
           </div>
         </a>
         <a href="bicycles.html" class="card" style="padding: 0; overflow: hidden; text-decoration: none;">
-          <img src="https://images.unsplash.com/photo-1576435728678-68ce06233824?auto=format&fit=crop&q=80&w=600" alt="Mountain Bikes" class="card-img" style="margin-bottom: 0;">
+          <img src="assets/images/category-mountain.jpg" alt="Mountain Bikes" class="card-img"
+            style="margin-bottom: 0;">
           <div style="padding: var(--space-4); width: 100%;">
             <h3>Mountain</h3>
             <p>Rugged suspension and geometry to conquer the toughest trails.</p>
-            <span style="color: var(--primary); font-weight: 700; text-transform: uppercase; font-size: 0.875rem;">Explore <i class="ph ph-arrow-right"></i></span>
+            <span
+              style="color: var(--primary); font-weight: 700; text-transform: uppercase; font-size: 0.875rem;">Explore
+              <i class="ph ph-arrow-right"></i></span>
           </div>
         </a>
         <a href="bicycles.html" class="card" style="padding: 0; overflow: hidden; text-decoration: none;">
-          <img src="https://images.unsplash.com/photo-1528723555231-15b6727ceb78?auto=format&fit=crop&q=80&w=600" alt="Hybrid & Electric" class="card-img" style="margin-bottom: 0;">
+          <img src="assets/images/category-hybrid.jpg" alt="Hybrid & Electric" class="card-img"
+            style="margin-bottom: 0;">
           <div style="padding: var(--space-4); width: 100%;">
-            <h3>Hybrid / Electric</h3>
+            <h3>Hybrid </h3>
             <p>Efficient commuting with pedal-assist options for the city rider.</p>
-            <span style="color: var(--primary); font-weight: 700; text-transform: uppercase; font-size: 0.875rem;">Explore <i class="ph ph-arrow-right"></i></span>
+            <span
+              style="color: var(--primary); font-weight: 700; text-transform: uppercase; font-size: 0.875rem;">Explore
+              <i class="ph ph-arrow-right"></i></span>
           </div>
         </a>
       </div>
@@ -130,11 +149,13 @@
   <!-- Workshop / Repair Highlight -->
   <section class="section section-dark" style="color: #fff; padding: var(--space-12) 0;">
     <div class="container" style="display: flex; gap: var(--space-8); flex-wrap: wrap; align-items: center;">
-      <div style="flex: 1; min-width: 300px;">
-        <span class="badge" style="margin-bottom: var(--space-3); background: var(--accent); color: var(--secondary);">The Workshop</span>
+      <div style="flex: 1; min-width: 300px; text-align: center;">
+        <span class="badge"
+          style="margin-bottom: var(--space-3); background: var(--accent); color: var(--secondary);">The Workshop</span>
         <h2 style="color: #fff; margin-bottom: var(--space-4);">Precision Servicing</h2>
-        <p style="color: rgba(255,255,255,0.68); margin-bottom: var(--space-6);">Our certified mechanics treat every bike like a race machine. We offer comprehensive repair services to keep you safe and fast.</p>
-        
+        <p style="color: rgba(255,255,255,0.68); margin-bottom: var(--space-6);">Our certified mechanics treat every
+          bike like a race machine. We offer comprehensive repair services to keep you safe and fast.</p>
+
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); margin-bottom: var(--space-6);">
           <div>
             <i class="ph-duotone ph-wrench" style="font-size: 2rem; color: var(--primary); margin-bottom: 8px;"></i>
@@ -142,7 +163,8 @@
             <p style="color: rgba(255,255,255,0.55); font-size: 0.875rem;">Complete safety check and adjustments.</p>
           </div>
           <div>
-            <i class="ph-duotone ph-circle-dashed" style="font-size: 2rem; color: var(--primary); margin-bottom: 8px;"></i>
+            <i class="ph-duotone ph-circle-dashed"
+              style="font-size: 2rem; color: var(--primary); margin-bottom: 8px;"></i>
             <h4 style="color: #fff;">Tire Repair</h4>
             <p style="color: rgba(255,255,255,0.55); font-size: 0.875rem;">Quick tube swaps and tubeless setups.</p>
           </div>
@@ -157,11 +179,12 @@
             <p style="color: rgba(255,255,255,0.55); font-size: 0.875rem;">Deep cleaning and bearing regrease.</p>
           </div>
         </div>
-        
+
         <a href="contact.html#booking" class="btn btn-primary">Book a Service</a>
       </div>
       <div style="flex: 1; min-width: 300px;">
-        <img src="https://images.unsplash.com/photo-1579624535352-32a76f2b4fb2?auto=format&fit=crop&q=80&w=800" alt="Bike Mechanic" style="width: 100%; border-radius: var(--radius); ">
+        <img src="assets/images/workshop-mechanic.jpg" alt="Bike Mechanic"
+          style="width: 100%; border-radius: var(--radius); ">
       </div>
     </div>
   </section>
@@ -173,32 +196,32 @@
         <h2>Gear Up</h2>
         <p>Premium components and accessories to elevate your ride.</p>
       </div>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--space-4);">
+      <div class="grid grid-4">
         <a href="accessories.html" class="tile">
-          <img src="https://images.unsplash.com/photo-1599819811279-d5ad9cccf838?auto=format&fit=crop&q=80&w=400" alt="Helmets" class="tile-img">
-          <i class="ph-duotone ph-hard-hat" style="font-size: 2rem; color: var(--primary); margin-bottom: var(--space-1);"></i>
+          <img src="assets/images/accessory-helmets.jpg" alt="Helmets" class="tile-img">
+          <i class="ph-duotone ph-hard-hat"
+            style="font-size: 2rem; color: var(--primary); margin-bottom: var(--space-1);"></i>
           <h4 style="margin: 0; font-size: 1.125rem;">Helmets</h4>
         </a>
         <a href="accessories.html" class="tile">
-          <img src="https://images.unsplash.com/photo-1565109156817-578f7734abff?auto=format&fit=crop&q=80&w=400" alt="Lights" class="tile-img">
-          <i class="ph-duotone ph-flashlight" style="font-size: 2rem; color: var(--primary); margin-bottom: var(--space-1);"></i>
+          <img src="assets/images/accessory-lights.jpg" alt="Lights" class="tile-img">
+          <i class="ph-duotone ph-flashlight"
+            style="font-size: 2rem; color: var(--primary); margin-bottom: var(--space-1);"></i>
           <h4 style="margin: 0; font-size: 1.125rem;">Lights</h4>
         </a>
         <a href="accessories.html" class="tile">
-          <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&q=80&w=400" alt="Locks" class="tile-img">
-          <i class="ph-duotone ph-lock-key" style="font-size: 2rem; color: var(--primary); margin-bottom: var(--space-1);"></i>
+          <img src="assets/images/accessory-locks.jpg" alt="Locks" class="tile-img">
+          <i class="ph-duotone ph-lock-key"
+            style="font-size: 2rem; color: var(--primary); margin-bottom: var(--space-1);"></i>
           <h4 style="margin: 0; font-size: 1.125rem;">Locks</h4>
         </a>
         <a href="accessories.html" class="tile">
-          <img src="https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?auto=format&fit=crop&q=80&w=400" alt="Tires" class="tile-img">
-          <i class="ph-duotone ph-circle-dashed" style="font-size: 2rem; color: var(--primary); margin-bottom: var(--space-1);"></i>
+          <img src="assets/images/accessory-tires.jpg" alt="Tires" class="tile-img">
+          <i class="ph-duotone ph-circle-dashed"
+            style="font-size: 2rem; color: var(--primary); margin-bottom: var(--space-1);"></i>
           <h4 style="margin: 0; font-size: 1.125rem;">Tires</h4>
         </a>
-        <a href="accessories.html" class="tile">
-          <img src="https://images.unsplash.com/photo-1501147830916-af448217f1cd?auto=format&fit=crop&q=80&w=400" alt="Chains" class="tile-img">
-          <i class="ph-duotone ph-link" style="font-size: 2rem; color: var(--primary); margin-bottom: var(--space-1);"></i>
-          <h4 style="margin: 0; font-size: 1.125rem;">Chains</h4>
-        </a>
+
       </div>
       <div style="text-align: center; margin-top: var(--space-6);">
         <a href="accessories.html" class="btn btn-outline">View All Accessories</a>
@@ -213,15 +236,18 @@
         <h2>Rider Reviews</h2>
         <p>Don't just take our word for it. Hear from the community.</p>
       </div>
-      <div class="grid">
-        <div class="card" style="text-align: left; align-items: flex-start;">
+      <div class="grid grid-3-center">
+        <div class="card">
           <div style="display: flex; gap: 4px; color: #ffb400; margin-bottom: var(--space-2);">
-            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+              class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
           </div>
-          <p style="font-style: italic;">"The mechanics at CycleNest saved my race weekend. They fixed a bent derailleur hanger on the spot. True lifesavers!"</p>
+          <p style="font-style: italic;">"The mechanics at CycleNest saved my race weekend. They fixed a bent derailleur
+            hanger on the spot. True lifesavers!"</p>
           <div style="display: flex; gap: var(--space-3); align-items: center; margin-top: auto;">
             <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--border); overflow: hidden;">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100" alt="Mark T." style="width: 100%; height: 100%; object-fit: cover;">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100"
+                alt="Mark T." style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <div>
               <h4 style="margin: 0; font-size: 1rem;">Mark T.</h4>
@@ -229,14 +255,17 @@
             </div>
           </div>
         </div>
-        <div class="card" style="text-align: left; align-items: flex-start;">
+        <div class="card">
           <div style="display: flex; gap: 4px; color: #ffb400; margin-bottom: var(--space-2);">
-            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+              class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
           </div>
-          <p style="font-style: italic;">"Bought my first real road bike here. The staff took the time to fit me properly and explain all the gear. Excellent experience."</p>
+          <p style="font-style: italic;">"Bought my first real road bike here. The staff took the time to fit me
+            properly and explain all the gear. Excellent experience."</p>
           <div style="display: flex; gap: var(--space-3); align-items: center; margin-top: auto;">
             <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--border); overflow: hidden;">
-              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=100" alt="Sarah W." style="width: 100%; height: 100%; object-fit: cover;">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=100"
+                alt="Sarah W." style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <div>
               <h4 style="margin: 0; font-size: 1rem;">Sarah W.</h4>
@@ -244,14 +273,17 @@
             </div>
           </div>
         </div>
-        <div class="card" style="text-align: left; align-items: flex-start;">
+        <div class="card">
           <div style="display: flex; gap: 4px; color: #ffb400; margin-bottom: var(--space-2);">
-            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+              class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
           </div>
-          <p style="font-style: italic;">"Fast, reliable, and honest. They didn't try to upsell me on parts I didn't need. My commuter bike rides like new again."</p>
+          <p style="font-style: italic;">"Fast, reliable, and honest. They didn't try to upsell me on parts I didn't
+            need. My commuter bike rides like new again."</p>
           <div style="display: flex; gap: var(--space-3); align-items: center; margin-top: auto;">
             <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--border); overflow: hidden;">
-              <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&q=80&w=100" alt="James L." style="width: 100%; height: 100%; object-fit: cover;">
+              <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&q=80&w=100"
+                alt="James L." style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <div>
               <h4 style="margin: 0; font-size: 1rem;">James L.</h4>
@@ -262,12 +294,15 @@
       </div>
     </div>
   </section>
-
   <!-- CTA Banner -->
-  <section class="section section-cta" style="text-align: center; color: #fff; padding: var(--space-12) 0;">
+  <section class="section section-cta section-cta-photo"
+    style="text-align: center; color: #fff; padding: var(--space-12) 0;">
     <div class="container">
-      <h2 style="font-size: 3rem; margin-bottom: var(--space-4); color: #fff; text-transform: uppercase;">Ready to hit the road?</h2>
-      <a href="contact.html#booking" class="btn" style="background: #fff; color: var(--primary); font-size: 1.25rem; padding: 18px 36px;">Book Your Service Today</a>
+      <h2 style="font-size: 3rem; margin-bottom: var(--space-4); color: #fff; text-transform: uppercase;">Ready to hit
+        the road?</h2>
+      <a href="contact.html#booking" class="btn"
+        style="background: #fff; color: var(--primary); font-size: 1.25rem; padding: 18px 36px;">Book Your Service
+        Today</a>
     </div>
   </section>
 
@@ -276,8 +311,10 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <a href="index.html" class="logo" style="color: #fff; margin-bottom: var(--space-3);"><i class="ph-fill ph-bicycle"></i> <span>Cycle<span>Nest</span></span></a>
-          <p style="color: rgba(255,255,255,0.68);">Your premium destination for bicycles, gear, and professional servicing. Built for the ride.</p>
+          <a href="index.html" class="logo" style="color: #fff; margin-bottom: var(--space-3);"><i
+              class="ph-fill ph-bicycle"></i> <span>Cycle<span>Nest</span></span></a>
+          <p style="color: rgba(255,255,255,0.68);">Your premium destination for bicycles, gear, and professional
+            servicing. Built for the ride.</p>
         </div>
         <div class="footer-col">
           <h4>Explore</h4>
@@ -299,10 +336,12 @@
         </div>
         <div class="footer-col">
           <h4>Newsletter</h4>
-          <p style="color: rgba(255,255,255,0.68); margin-bottom: var(--space-2);">Subscribe for tips, gear reviews, and exclusive offers.</p>
+          <p style="color: rgba(255,255,255,0.68); margin-bottom: var(--space-2);">Subscribe for tips, gear reviews, and
+            exclusive offers.</p>
           <form class="newsletter-form">
             <input type="email" placeholder="Your email" class="newsletter-input" aria-label="Email address">
-            <button type="submit" class="btn btn-primary" style="padding: 10px 16px;"><i class="ph ph-paper-plane-right"></i></button>
+            <button type="submit" class="btn btn-primary" style="padding: 10px 16px;"><i
+                class="ph ph-paper-plane-right"></i></button>
           </form>
         </div>
       </div>
@@ -314,4 +353,5 @@
 
   <script src="assets/js/main.js"></script>
 </body>
+
 </html>

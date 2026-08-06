@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact & Book a Repair - CycleNest</title>
   <meta name="description" content="Contact CycleNest or book your next bicycle repair service online.">
   <!-- Favicon -->
-  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="assets/images/favicon.ico" sizes="32x32">
   <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
-  <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#e0263a">
   <!-- Phosphor Icons -->
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/rtl.css">
 </head>
+
 <body>
 
   <!-- Header -->
@@ -34,8 +35,10 @@
         <a href="contact.html" class="nav-link" style="color: var(--primary);">Contact</a>
       </nav>
       <div class="nav-actions">
-        <button class="theme-toggle" aria-label="Toggle Dark Mode" title="Toggle Theme"><i class="ph ph-moon"></i></button>
-        <button class="rtl-toggle" aria-label="Toggle RTL" title="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+        <button class="theme-toggle" aria-label="Toggle Dark Mode" title="Toggle Theme"><i
+            class="ph ph-moon"></i></button>
+        <button class="rtl-toggle" aria-label="Toggle RTL" title="Toggle RTL"><i
+            class="ph ph-arrows-left-right"></i></button>
         <a href="login.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.875rem;">Login</a>
       </div>
       <button class="hamburger" aria-label="Open Menu"><i class="ph ph-list"></i></button>
@@ -63,7 +66,8 @@
   </div>
 
   <!-- Page Header -->
-  <section class="section page-hero" style="padding-top: calc(var(--header-height) + var(--space-10)); text-align: center; padding-bottom: var(--space-12);">
+  <section class="section page-hero"
+    style="padding-top: calc(var(--header-height) + var(--space-10)); text-align: center; padding-bottom: var(--space-12);">
     <div class="container">
       <h1 style="font-size: 4rem;">Get in Touch</h1>
       <p style="color: var(--text-light); max-width: 600px; margin: 0 auto; font-size: 1.125rem;">
@@ -74,11 +78,11 @@
 
   <section class="section">
     <div class="container" style="display: flex; gap: var(--space-8); flex-wrap: wrap;">
-      
+
       <!-- Contact Info -->
       <div style="flex: 1; min-width: 300px;">
-        <h2 style="margin-bottom: var(--space-4);">Our Location</h2>
-        
+        <h2 style="margin-bottom: var(--space-4); text-align: center;">Our Location</h2>
+
         <div class="contact-item">
           <i class="ph-fill ph-map-pin" style="color: var(--primary); font-size: 1.5rem;"></i>
           <div>
@@ -103,10 +107,13 @@
           </div>
         </div>
 
-        <!-- Google Maps Iframe Placeholder -->
+        <!-- Centred on the 90210 postcode from the address above, since "123 Spoke
+             Avenue" is a placeholder Google cannot geocode. Swap the q= value for
+             the real address, or paste a URL from Google Maps > Share > Embed a map. -->
         <div class="map-embed" style="margin-bottom: var(--space-4);">
-          <!-- <iframe src="YOUR_GOOGLE_MAPS_EMBED_URL" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
-          <span><i class="ph ph-map-trifold"></i> Google Maps Embed</span>
+          <iframe src="https://www.google.com/maps?q=90210&z=14&output=embed"
+            title="Map showing the CycleNest shop location" loading="lazy" allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
 
         <h4 style="margin-bottom: var(--space-2);">Follow Us</h4>
@@ -119,21 +126,22 @@
 
       <!-- Booking Form -->
       <div id="booking" class="booking-panel" style="flex: 1.5; min-width: 300px;">
-        <div class="section-header" style="text-align: left; margin-bottom: var(--space-4);">
+        <div class="section-header" style="margin-bottom: var(--space-4);">
           <h2 style="margin-bottom: 8px;">Book a Repair</h2>
           <p style="margin: 0;">Fill out the details below to secure your drop-off slot.</p>
         </div>
 
         <!-- Success Message (Hidden by default) -->
         <div id="bookingSuccess" style="display: none; text-align: center; padding: var(--space-6) 0;">
-          <i class="ph-fill ph-check-circle" style="font-size: 4rem; color: #4caf50; margin-bottom: var(--space-2);"></i>
+          <i class="ph-fill ph-check-circle"
+            style="font-size: 4rem; color: #4caf50; margin-bottom: var(--space-2);"></i>
           <h3>Request Sent Successfully!</h3>
           <p style="color: var(--text-light);">We'll contact you shortly to confirm your appointment.</p>
         </div>
 
         <!-- Formspree / Netlify Forms placeholder action -->
         <form id="bookingForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-          
+
           <div style="display: flex; gap: var(--space-4); flex-wrap: wrap;">
             <div class="form-group" style="flex: 1; min-width: 200px;">
               <label for="bookingName" class="form-label">Full Name *</label>
@@ -142,7 +150,8 @@
             </div>
             <div class="form-group" style="flex: 1; min-width: 200px;">
               <label for="bookingContact" class="form-label">Phone / Email *</label>
-              <input type="text" id="bookingContact" name="contact" class="form-control" placeholder="555-0198 or john@mail.com">
+              <input type="text" id="bookingContact" name="contact" class="form-control"
+                placeholder="555-0198 or john@mail.com">
               <span class="form-error"></span>
             </div>
           </div>
@@ -196,10 +205,12 @@
 
           <div class="form-group">
             <label for="bookingNotes" class="form-label">Additional Notes</label>
-            <textarea id="bookingNotes" name="notes" class="form-control" rows="4" placeholder="Describe any specific issues (e.g., 'brakes are squeaking')..."></textarea>
+            <textarea id="bookingNotes" name="notes" class="form-control" rows="4"
+              placeholder="Describe any specific issues (e.g., 'brakes are squeaking')..."></textarea>
           </div>
 
-          <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.125rem;">Confirm Booking Request</button>
+          <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.125rem;">Confirm
+            Booking</button>
         </form>
 
       </div>
@@ -211,8 +222,10 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <a href="index.html" class="logo" style="color: #fff; margin-bottom: var(--space-3);"><i class="ph-fill ph-bicycle"></i> <span>Cycle<span>Nest</span></span></a>
-          <p style="color: rgba(255,255,255,0.68);">Your premium destination for bicycles, gear, and professional servicing. Built for the ride.</p>
+          <a href="index.html" class="logo" style="color: #fff; margin-bottom: var(--space-3);"><i
+              class="ph-fill ph-bicycle"></i> <span>Cycle<span>Nest</span></span></a>
+          <p style="color: rgba(255,255,255,0.68);">Your premium destination for bicycles, gear, and professional
+            servicing. Built for the ride.</p>
         </div>
         <div class="footer-col">
           <h4>Explore</h4>
@@ -234,10 +247,12 @@
         </div>
         <div class="footer-col">
           <h4>Newsletter</h4>
-          <p style="color: rgba(255,255,255,0.68); margin-bottom: var(--space-2);">Subscribe for tips, gear reviews, and exclusive offers.</p>
+          <p style="color: rgba(255,255,255,0.68); margin-bottom: var(--space-2);">Subscribe for tips, gear reviews, and
+            exclusive offers.</p>
           <form class="newsletter-form">
             <input type="email" placeholder="Your email" class="newsletter-input" aria-label="Email address">
-            <button type="submit" class="btn btn-primary" style="padding: 10px 16px;"><i class="ph ph-paper-plane-right"></i></button>
+            <button type="submit" class="btn btn-primary" style="padding: 10px 16px;"><i
+                class="ph ph-paper-plane-right"></i></button>
           </form>
         </div>
       </div>
@@ -250,4 +265,5 @@
   <script src="assets/js/main.js"></script>
   <script src="assets/js/booking.js"></script>
 </body>
+
 </html>

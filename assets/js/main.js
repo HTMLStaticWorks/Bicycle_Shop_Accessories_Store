@@ -210,7 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Scroll reveal — staggered per group, class-driven so no-JS still renders
   const revealTargets = document.querySelectorAll(
-    '.card, .section-header, .tile, .service-row, .booking-panel, .grid > *, .page-hero .container'
+    '.card, .section-header, .tile, .service-row, .booking-panel, .grid > *, .page-hero .container, .cta-animate .container > *'
   );
 
   if (!reduceMotion && 'IntersectionObserver' in window) {
@@ -227,6 +227,48 @@ document.addEventListener('DOMContentLoaded', () => {
     revealTargets.forEach(el => {
       el.classList.add('reveal');
       observer.observe(el);
+    });
+  }
+
+  // Milestone figures count up the first time they scroll into view. The final
+  // value is what's written in the markup, so the numbers still read correctly
+  // with JS off or motion reduced — this only replaces it while animating.
+  const counters = document.querySelectorAll('[data-count-to]');
+
+  if (counters.length && !reduceMotion && 'IntersectionObserver' in window) {
+    const COUNT_MS = 1600;
+    // easeOutCubic: quick off the mark, settling gently onto the final figure
+    const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
+
+    const format = (el, value) =>
+      `${el.dataset.prefix || ''}${value.toLocaleString()}${el.dataset.suffix || ''}`;
+
+    const countUp = (el) => {
+      const target = Number(el.dataset.countTo);
+      if (!Number.isFinite(target)) return;
+
+      const started = performance.now();
+
+      const step = (now) => {
+        const elapsed = Math.min((now - started) / COUNT_MS, 1);
+        el.textContent = format(el, Math.round(target * easeOutCubic(elapsed)));
+        if (elapsed < 1) requestAnimationFrame(step);
+      };
+
+      requestAnimationFrame(step);
+    };
+
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        countUp(entry.target);
+        countObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.4 });
+
+    counters.forEach(el => {
+      el.textContent = format(el, 0);
+      countObserver.observe(el);
     });
   }
 });
