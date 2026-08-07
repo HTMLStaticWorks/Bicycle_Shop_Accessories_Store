@@ -50,4 +50,27 @@ document.addEventListener('DOMContentLoaded', () => {
     confirmField.addEventListener('input', check);
     source.addEventListener('input', check);
   });
+
+  // Terms consent. `required` already blocks the submit; this just mirrors the
+  // browser's complaint into the inline error line the rest of the form uses.
+  document.querySelectorAll('[data-consent]').forEach(box => {
+    const group = box.closest('.form-group');
+    const error = group ? group.querySelector('.form-error') : null;
+    if (!error) return;
+
+    box.addEventListener('invalid', () => {
+      error.style.display = 'block';
+    });
+
+    box.addEventListener('change', () => {
+      error.style.display = box.checked ? 'none' : 'block';
+    });
+  });
+
+  // The Terms and Privacy links sit inside the consent <label>, so a click on
+  // one would otherwise tick the box on the way out. Keep the event off the
+  // label and let the link do only what it says.
+  document.querySelectorAll('.auth-consent a').forEach(link => {
+    link.addEventListener('click', event => event.stopPropagation());
+  });
 });

@@ -2187,13 +2187,18 @@ h2 {
   box-shadow: 0 0 0 4px rgba(224, 38, 58, 0.14);
 }
 
+/* Four columns fold to a 2x2 block and hold that shape all the way down to
+   the phone breakpoint — at tablet widths there is room for two, and stacking
+   early leaves a very tall footer. */
 @media (max-width: 1024px) {
   .footer-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 768px) {
+/* Single column only once 2x2 stops fitting; everything centres together,
+   the social row included. */
+@media (max-width: 560px) {
   .footer-grid {
     grid-template-columns: 1fr;
     text-align: center;
@@ -2206,6 +2211,10 @@ h2 {
   .footer-col h4::after {
     left: 50%;
     transform: translateX(-50%);
+  }
+
+  .footer-social {
+    justify-content: center;
   }
 }
 
@@ -2763,6 +2772,23 @@ select.form-control {
 .auth-forgot {
   font-size: 0.875rem;
   white-space: nowrap;
+}
+
+/* Terms consent on the register form. The box is pinned to the top of the row
+   so it stays level with the first line once the sentence wraps to two. */
+.auth-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.auth-consent input {
+  flex-shrink: 0;
+  margin-top: 3px;
+  accent-color: var(--primary);
 }
 
 /* Legal small print under the register form */
